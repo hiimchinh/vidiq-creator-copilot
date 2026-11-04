@@ -18,16 +18,20 @@
   --bad: #b42318;
   --focus: #4338ca;
   --figure: #9a5b00;
+  --rail: #ececf0;
+  --table: #ffffff;
+  --table-head: #f3f3f6;
+  --hairline: #e6e6eb;
   color-scheme: light;
 }
 
 .dark {
-  --bg: #0e0f13;
-  --surface: #15161c;
-  --surface-2: #1f2027;
-  --border: #282a32;
-  --text: #ececf1;
-  --muted: #9a9caa;
+  --bg: #0a0d15;
+  --surface: #161922;
+  --surface-2: #1d202a;
+  --border: #23263a;
+  --text: #e9eaef;
+  --muted: #8b90a0;
   --accent: #a5a8ff;
   --accent-soft: #1f2040;
   --credit: #fbbf63;
@@ -37,6 +41,10 @@
   --bad: #f87171;
   --focus: #a5a8ff;
   --figure: #f5c451;
+  --rail: #05070b;
+  --table: #0b0e16;
+  --table-head: #10131b;
+  --hairline: #161923;
   color-scheme: dark;
 }
 
@@ -55,6 +63,10 @@
   --color-warn: var(--warn);
   --color-bad: var(--bad);
   --color-figure: var(--figure);
+  --color-rail: var(--rail);
+  --color-table: var(--table);
+  --color-table-head: var(--table-head);
+  --color-hairline: var(--hairline);
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }

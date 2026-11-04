@@ -1,44 +1,44 @@
 import { AppHeader } from "@/components/app-header";
 import { Copilot } from "@/components/copilot";
+import { NewChatRail } from "@/components/new-chat-rail";
 import { WebVitals } from "@/components/web-vitals";
 import { isLiveModeEnabled } from "@/lib/demo/live-mode";
 import { featuredTurn } from "@/lib/replay/featured-turn";
 import { scenarioSummaries } from "@/lib/replay/replay-store";
 
 const README_RUN_LOCALLY = "https://github.com/hiimchinh/vidiq-creator-copilot#run-it-locally-one-command-no-keys";
+const VIDIQ_MCP_DOCS = "https://support.vidiq.com/en/articles/15082430-vidiq-mcp";
 
 export default function Home() {
   // Read at build time: the page stays static. The API routes check LIVE_MODE again on every request.
   const liveEnabled = isLiveModeEnabled();
   return (
     <>
-      <AppHeader liveEnabled={liveEnabled} />
-      <main className="mx-auto flex max-w-3xl flex-col gap-6 px-4 pt-6">
-        <section className="flex flex-col gap-2">
-          <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">Grow your channel without burning credits.</h1>
-          <p className="max-w-2xl text-muted">
-            Ask about keywords, titles or breakout videos. Every paid vidIQ call shows its credit cost first, identical calls come
-            from cache for 0 credits, and a paid call is never retried on its own.
-          </p>
-          <p className="text-xs text-muted">
-            Independent demo built on the public{" "}
-            <a className="underline underline-offset-2 hover:text-ink" href="https://support.vidiq.com/en/articles/15082430-vidiq-mcp" target="_blank" rel="noopener noreferrer">
-              vidIQ MCP
-            </a>
-            . Not made or endorsed by vidIQ. Replay mode uses real responses recorded on 4 Nov 2026.
-          </p>
-          {!liveEnabled && (
-            <p data-testid="live-off-note" className="text-xs text-muted">
-              Live mode runs locally with your own keys: see the{" "}
-              <a className="underline underline-offset-2 hover:text-ink" href={README_RUN_LOCALLY} target="_blank" rel="noopener noreferrer">
-                README
+      <NewChatRail />
+      <div className="md:pl-16">
+        <AppHeader liveEnabled={liveEnabled} />
+        <main className="mx-auto max-w-[800px] px-4 pt-3">
+          <h1 className="sr-only">Creator Copilot: grow your channel without burning credits</h1>
+          <Copilot scenarios={scenarioSummaries()} liveEnabled={liveEnabled} featured={featuredTurn()}>
+            <p className="text-center text-[11px] leading-relaxed text-muted">
+              Independent demo on the public{" "}
+              <a className="underline underline-offset-2 hover:text-ink" href={VIDIQ_MCP_DOCS} target="_blank" rel="noopener noreferrer">
+                vidIQ MCP
               </a>
-              .
+              . Not made or endorsed by vidIQ.<span className="hidden sm:inline"> Replay uses real responses recorded on 4 Nov 2026.</span>
+              {!liveEnabled && (
+                <span data-testid="live-off-note" className="hidden sm:block">
+                  Live mode runs locally with your own keys: see the{" "}
+                  <a className="underline underline-offset-2 hover:text-ink" href={README_RUN_LOCALLY} target="_blank" rel="noopener noreferrer">
+                    README
+                  </a>
+                  .
+                </span>
+              )}
             </p>
-          )}
-        </section>
-        <Copilot scenarios={scenarioSummaries()} liveEnabled={liveEnabled} featured={featuredTurn()} />
-      </main>
+          </Copilot>
+        </main>
+      </div>
       <WebVitals />
     </>
   );

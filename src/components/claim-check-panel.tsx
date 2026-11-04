@@ -35,7 +35,7 @@ export function ClaimCheckPanel({ text, sources }: { text: string; sources: Sour
           </label>
         ))}
       </div>
-      <p aria-live="polite" data-testid="claim-check-note" data-checker={checker} className={`text-[15px] leading-7 ${exact ? "italic" : ""}`}>
+      <p aria-live="polite" data-testid="claim-check-note" data-checker={checker} className={`text-[15px] leading-[26px] ${exact ? "italic" : ""}`}>
         {!exact && clean && <span aria-hidden="true" className="mr-1.5 not-italic text-good">✓</span>}
         {exact ? checks.exact.note : checks.provenance.note}
       </p>

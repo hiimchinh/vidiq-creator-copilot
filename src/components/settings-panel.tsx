@@ -22,7 +22,7 @@ export function SettingsPanel() {
   }
 
   return (
-    <section aria-label="Credit settings" className="flex flex-col gap-3 rounded-lg border border-line bg-surface p-3 text-xs sm:flex-row sm:items-center">
+    <section aria-label="Credit options" className="flex flex-col gap-3 text-xs">
       <label className="flex items-center gap-2">
         <input type="checkbox" checked={autoRun} onChange={(e) => setAutoRun(e.target.checked)} className="size-4 accent-[var(--accent)]" />
         <span>Auto-run paid calls up to</span>
@@ -39,7 +39,7 @@ export function SettingsPanel() {
         <span>credits this session</span>
       </label>
       {mode === "live" && (
-        <div className="flex flex-1 flex-wrap items-center gap-2 sm:justify-end">
+        <div className="flex flex-wrap items-center gap-2">
           <label htmlFor="vidiq-key" className="text-muted">
             Your vidIQ API key
           </label>
@@ -50,12 +50,12 @@ export function SettingsPanel() {
             value={vidiqKey}
             onChange={(e) => setKey(e.target.value)}
             placeholder="Kept in this tab only"
-            className="min-w-0 flex-1 rounded border border-line bg-bg px-2 py-1 sm:max-w-56"
+            className="min-w-0 flex-1 rounded border border-line bg-bg px-2 py-1"
           />
           <button type="button" onClick={checkKey} disabled={!vidiqKey} className="rounded border border-line px-2 py-1 font-medium hover:bg-surface-2 disabled:opacity-50">
             Check (free)
           </button>
-          {status && <span role="status" className="w-full text-muted sm:w-auto">{status}</span>}
+          {status && <span role="status" className="w-full text-muted">{status}</span>}
         </div>
       )}
     </section>
