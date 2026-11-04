@@ -1,0 +1,44 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - run: corepack enable && corepack pnpm install --frozen-lockfile
+      - run: corepack pnpm typecheck
+      - run: corepack pnpm test
+      - run: corepack pnpm eval
+
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - run: corepack enable && corepack pnpm install --frozen-lockfile
+      - run: corepack pnpm exec playwright install --with-deps chromium-headless-shell
+      - run: corepack pnpm build
+      - run: corepack pnpm e2e
+      - name: Perf budget (LCP, CLS, initial JS)
+        run: |
+          corepack pnpm start -p 3077 &
+          npx --yes wait-on http://localhost:3077
+          corepack pnpm perf

@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@12.16.1",
-  "engines": { "node": ">=22.18" },
+  "engines": {
+    "node": ">=22.18"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,7 +17,9 @@
     "e2e": "playwright test",
     "eval": "tsx scripts/eval.ts",
     "perf": "tsx scripts/perf.ts",
-    "record": "tsx scripts/record-fixtures.ts"
+    "record": "tsx scripts/record-fixtures.ts",
+    "demo": "next build && next start -p 3000",
+    "check": "tsc --noEmit && vitest run"
   },
   "dependencies": {
     "next": "16.4.5",
