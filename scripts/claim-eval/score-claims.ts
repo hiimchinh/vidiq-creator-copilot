@@ -1,6 +1,6 @@
 import { buildSources, type SourceStep } from "../../src/lib/claims/provenance";
 import { displayText, verifyAnswer } from "../../src/lib/claims/verify-answer";
-import { naiveFlags } from "./naive-exact-checker";
+import { naiveFlags } from "../../src/lib/claims/naive-exact-checker";
 
 /** One eval case: the tool results, the answer as the model wrote it (with citations), and the truth. */
 export interface ClaimCase {

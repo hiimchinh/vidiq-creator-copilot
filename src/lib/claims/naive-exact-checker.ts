@@ -4,9 +4,9 @@
  * that label to match a tool result exactly; without a label it only asks whether the number appears
  * anywhere in the tool data. This is a hypothesis from the observed output, not vidIQ's code.
  */
-import { parseDisplayNumber } from "../../src/lib/claims/display-number";
-import { sentenceStart } from "../../src/lib/claims/find-unbacked";
-import type { Source } from "../../src/lib/claims/provenance";
+import { parseDisplayNumber } from "./display-number";
+import { sentenceStart } from "./find-unbacked";
+import type { Source } from "./provenance";
 
 export interface Span {
   start: number;
@@ -38,7 +38,8 @@ function index(sources: Source[]): { items: Item[]; numbers: Set<number> } {
 const unquote = (s: string) => s.trim().replace(/^["“](.*)["”]$/, "$1");
 const letters = (s: string) => s.replace(/[^a-z]/gi, "").length;
 
-function labelFor(text: string, span: Span): string | undefined {
+/** The label the baseline binds a number to: the widest text cell of its table row, or the last quoted title before it. */
+export function exactLabelFor(text: string, span: Span): string | undefined {
   const lineStart = text.lastIndexOf("\n", span.start - 1) + 1;
   const lineEnd = text.indexOf("\n", span.start);
   const line = text.slice(lineStart, lineEnd < 0 ? undefined : lineEnd);
@@ -57,7 +58,7 @@ export function naiveFlags(text: string, spans: Span[], sources: Source[]): bool
   return spans.map((span) => {
     const value = parseDisplayNumber(span.text)?.value;
     if (value === undefined) return false; // labels are not checked at all
-    const label = labelFor(text, span);
+    const label = exactLabelFor(text, span);
     if (label === undefined) return !numbers.has(value);
     const item = items.find((i) => i.name === label);
     return !item || !item.values.includes(value);
