@@ -3,6 +3,8 @@
  * word or under a metric column, and model-written labels such as "high search volume".
  * Runs on text whose citation tokens are already masked out.
  */
+export type LabelMetric = "competition" | "volume" | "overall";
+
 export interface Span {
   start: number;
   end: number;
@@ -11,8 +13,8 @@ export interface Span {
 
 export interface LabelMention extends Span {
   word: string;
-  /** "competition" | "volume" for "high competition"; undefined for a bare "(high)" after a number. */
-  metric?: "competition" | "volume";
+  /** Which metric "high competition" talks about; undefined for a bare "(high)" after a number. */
+  metric?: LabelMetric;
 }
 
 const QUOTED = /"[^"\n]*"|“[^”\n]*”|‘[^’\n]*’/g;
@@ -22,7 +24,7 @@ const CUE_BEFORE =
 const CUE_AFTER =
   /^\s*(?:\/\s*100|×|x\b|(?:monthly\s+)?search(?:es)?\b|\/mo\b|per month|a month|views\b|subscribers\b|subs\b|competition\b|overall\b|score\b|vph\b|breakout\b)/i;
 const CUE_HEADER = /score|competition|volume|search|overall|views|subscribers|growth|vph|breakout|engagement/i;
-const LABEL_BEFORE = /\b(low|medium|med|moderate|high)[\s-]+(competition|search volume|volume|demand)\b/gi;
+const LABEL_BEFORE = /\b(low|medium|med|moderate|high)[\s-]+(competition|search volume|volume|demand|overall score)\b/gi;
 const LABEL_AFTER = /\b(competition|search volume)\s+(?:is\s+|of\s+)?(low|medium|med|moderate|high)\b/gi;
 const LABEL_PAREN = /\((low|medium|med|moderate|high)\)/gi;
 
@@ -87,9 +89,9 @@ export function bareMetricNumbers(text: string): Span[] {
 
 export function labelMentions(text: string): LabelMention[] {
   const quoted = quotedRanges(text);
-  const metricOf = (noun: string) => (/competition/i.test(noun) ? "competition" : "volume");
+  const metricOf = (noun: string): LabelMetric => (/competition/i.test(noun) ? "competition" : /overall/i.test(noun) ? "overall" : "volume");
   const found: LabelMention[] = [];
-  const add = (m: RegExpMatchArray, word: string, metric?: "competition" | "volume") => {
+  const add = (m: RegExpMatchArray, word: string, metric?: LabelMetric) => {
     const start = m.index ?? 0;
     if (inside(quoted, start) || found.some((f) => start < f.end && start + m[0].length > f.start)) return;
     found.push({ start, end: start + m[0].length, text: m[0], word, metric });

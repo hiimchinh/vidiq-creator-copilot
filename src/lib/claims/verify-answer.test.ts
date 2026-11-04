@@ -66,6 +66,14 @@ describe("verifyAnswer: labels come from the threshold table", () => {
     expect(checks("home barista is low competition at [[c3.rows.home barista.competition=26]].")).toEqual(["verified", "verified"]);
   });
 
+  it("checks labels on the overall score too", () => {
+    expect(checks("home barista has a high overall score of [[c3.rows.home barista.overall=62]].")).toEqual(["verified", "verified"]);
+    expect(checks("budget espresso machine has a high overall score of [[c3.rows.budget espresso machine.overall=51]].")).toEqual([
+      "mismatch",
+      "verified",
+    ]);
+  });
+
   it("attaches the computed label to each cited competition number", () => {
     expect(claims("[[c3.rows.budget espresso machine.competition=60]]")[0]).toMatchObject({ label: "high competition" });
   });

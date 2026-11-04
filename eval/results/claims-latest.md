@@ -23,8 +23,8 @@ False positive: a correct claim flagged (or a non-claim flagged). False negative
 
 ## Replay answers under the citation prompt
 
-7 recorded answers, 35 figures and labels: 32 verified, 3 flagged.
+7 recorded answers, 36 figures and labels: 33 verified, 3 flagged.
 
-- keyword-home-espresso: “high competition” (no-source): No cited number backs "high competition".
+- keyword-home-espresso: “high competition” (no-source): No cited number backs “high competition”.
 - longtail-budget-travel: “high search volume” (mismatch): 8.3K is medium search volume by the threshold table.
-- channel-veritasium: “high volume” (no-source): No cited number backs "high volume".
+- channel-veritasium: “high volume” (no-source): No cited number backs “high volume”.

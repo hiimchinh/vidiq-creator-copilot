@@ -418,12 +418,12 @@
   "replay": [
     {
       "id": "keyword-home-espresso",
-      "verified": 8,
+      "verified": 9,
       "flagged": [
         {
           "display": "high competition",
           "check": "no-source",
-          "reason": "No cited number backs \"high competition\"."
+          "reason": "No cited number backs “high competition”."
         }
       ],
       "text": "\"home barista\" is your best target for a small channel because it offers a strong overall score of 62 with the lowest competition of 26 among your top options.\n\n- Create content focused on the \"home barista\" lifestyle to capture the 4341 monthly searches while avoiding the high competition of broader terms like \"espresso\".\n- Target \"eureka mignon xl\" if you want to review gear, as it has a high overall score of 66 and low competition of 24.\n- Produce \"how to make espresso\" tutorials to leverage the 3372 monthly searches and a manageable competition level of 30."
@@ -465,7 +465,7 @@
         {
           "display": "high volume",
           "check": "no-source",
-          "reason": "No cited number backs \"high volume\"."
+          "reason": "No cited number backs “high volume”."
         }
       ],
       "text": "Veritasium has maintained strong momentum, gaining 100K subscribers and over 83.3M views in the last 30 days.\n\n- Leverage the high engagement from your recent 8 uploads by analyzing which topics drove the most significant spikes in your view velocity.\n- Since your channel is currently seeing a high volume of new viewers, consider adding a pinned comment or end screen call-to-action on your top-performing recent video to convert these new visitors into long-term subscribers.\n- Review the audience retention graphs for your latest content to identify where viewers are dropping off, ensuring your high-performing videos continue to drive growth throughout the next month."

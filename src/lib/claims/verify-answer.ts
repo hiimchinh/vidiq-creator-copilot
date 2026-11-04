@@ -1,5 +1,6 @@
 import { formatSourceValue, matchesSource, parseDisplayNumber } from "./display-number";
 import { bareMetricNumbers, labelMentions, sentenceStart } from "./find-unbacked";
+import { quoteOnce } from "./markdown-text";
 import { labelFor, labelText, normalizeLabel } from "./metric-labels";
 import { type Citation, citationOf, resolveRef, type Source } from "./provenance";
 
@@ -47,7 +48,7 @@ function citedClaim(sources: Source[], m: RegExpMatchArray): ClaimSegment {
   return { ...base, display, check: ok ? "verified" : "mismatch", reason, citation, label, field: resolved.field };
 }
 
-const METRIC_FIELDS = { competition: ["competition"], volume: ["volume", "monthlySearches"] } as const;
+const METRIC_FIELDS = { competition: ["competition"], volume: ["volume", "monthlySearches"], overall: ["overall"] } as const;
 
 function labelClaim(mention: ReturnType<typeof labelMentions>[number], claims: ClaimSegment[], text: string): ClaimSegment | undefined {
   const sentence = sentenceStart(text, mention.start);
@@ -62,7 +63,7 @@ function labelClaim(mention: ReturnType<typeof labelMentions>[number], claims: C
     if (!target) return undefined;
   }
   const base = { kind: "label" as const, display: mention.text, start: mention.start, end: mention.end };
-  if (!target?.citation) return { ...base, check: "no-source", reason: `No cited number backs "${mention.text}".` };
+  if (!target?.citation) return { ...base, check: "no-source", reason: `No cited number backs ${quoteOnce(mention.text)}.` };
   const value = target.citation.value;
   const computed = typeof value === "number" ? labelFor(target.field ?? "", value) : undefined;
   if (!computed) return undefined;
