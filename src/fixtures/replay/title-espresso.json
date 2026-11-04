@@ -70,38 +70,39 @@
     "chunks": [
       {
         "t": 776,
-        "text": "Your current"
+        "text": "Your current title is excellent, earning a score of [[c1.score=99]], so keep it as your primary option for high click-through potential.\n\n## "
       },
       {
         "t": 801,
-        "text": " title is excellent, earning a score of [[c1.score=99]], so"
+        "text": "📊 Title Scorecard\n\n| # | Title | Score |\n|---|---|---|\n| 1 | **I Tried 5 Cheap Espresso Machines So You Don't Have "
       },
       {
         "t": 899,
-        "text": " keep it as your primary option for high click-through potential.\n\n- Use \"Testing 5 Cheap Espresso Machines To Find The Best One"
+        "text": "To** (yours) | [[c1.score=99]] |\n| 2 | Testing 5 Cheap Espresso Machines To Find The Best One | [[c2.titles.0.score=97]] |\n| 3 "
       },
       {
         "t": 974,
-        "text": "\" if you want to emphasize the search-intent aspect, which scores [[c2.titles.0.score=97]].\n-"
+        "text": "| 5 Cheap Espresso Machines Tested: Which Is Actually Good? | [[c2.titles.1.score=96]] |\n| 4 | I Tested The Cheapest Espresso Machines "
       },
       {
         "t": 1019,
-        "text": " Try \"5 Cheap Espresso Machines Tested: Which Is Actually Good?\" to create a stronger curiosity gap, as it scores [[c2"
+        "text": "On Amazon | [[c2.titles.2.score=96]] |\n\n- Use \"Testing 5 Cheap Espresso Machines To Find The Best One\" if you want to emphasize "
       },
       {
         "t": 1160,
-        "text": ".titles.1.score=96]].\n- Consider \"I Tested The Cheapest Espresso Machines On Amazon\" to"
+        "text": "the search-intent aspect, which scores [[c2.titles.0.score=97]].\n- Try \"5 Cheap Espresso Machines Tested: Which Is Actually Good?\" to create a stronger curiosity "
       },
       {
         "t": 1160,
-        "text": " leverage platform-specific authority, which scores [[c2.titles.2.score=96]].\n- Ensure your thumbnail highlights"
+        "text": "gap, as it scores [[c2.titles.1.score=96]].\n- Consider \"I Tested The Cheapest Espresso Machines On Amazon\" to leverage platform-specific authority, which scores [[c2.titles.2.score=96]].\n- "
       },
       {
         "t": 1160,
-        "text": " the specific machines being tested to visually reinforce the \"5\" mentioned in your high-performing title."
+        "text": "Ensure your thumbnail highlights the specific machines being tested to visually reinforce the \"5\" mentioned in your high-performing title."
       }
     ]
   },
+  "answerNote": "Re-rendered from the recorded answer in AI Coach's Title Scorecard layout: same sentences, same citations, same chunk times. The table and the (yours) mark on the creator's row are added on purpose; that mark is what trips an exact-text claim check.",
   "costs": {
     "credits": 10,
     "llmUsd": 0.00161375

@@ -3,6 +3,10 @@
 An independent demo built on the public [vidIQ MCP](https://support.vidiq.com/en/articles/15082430-vidiq-mcp).
 It is not made or endorsed by vidIQ and uses no vidIQ brand assets.
 
+**Demo:** a Replay-only build runs at https://vidiq-demo.hiimchinh.com. It is private: ask Chinh Hoang
+for an access link. Replay answers the recorded example questions from stored tool results and spends
+no credits. Live mode runs locally with your own keys.
+
 Chinh Hoang designed it around one question: **can a creator trust each number in an AI answer?**
 On 4 Nov 2026 he tested vidIQ's AI Coach with three questions and found that its claim check called
 the creator's own correct title score (99/100 and 86/100) "unverified", because the model had written
@@ -45,9 +49,12 @@ inconsistent "(med)"/"(high)" label and this repo's own earlier ungrounded answe
 | Naive exact-string match, a reconstruction of the observed behaviour | 9 / 29 (31.0%) | 5 / 9 (55.6%) |
 | Provenance binding (this repo) | 0 / 29 (0%) | 0 / 9 (0%) |
 
-The same command checks the seven Replay answers, re-recorded with the citation prompt: 33 figures and
+The same command checks the seven Replay answers, re-recorded with the citation prompt: 37 figures and
 labels verified, 3 model-written labels flagged (for example "a high search volume of 8.3K", which is
 medium by the table). The earlier espresso answer's "high search volume of Amazon" is flagged too.
+The espresso answer is shown in AI Coach's Title Scorecard layout: the recorded sentences and citations,
+plus a table with "(yours)" on the creator's row. Under the answer, a toggle runs both checks on it:
+the exact-text check flags the creator's own 99, the provenance check verifies all 8 scores.
 
 ## Run it locally (one command, no keys)
 
@@ -153,7 +160,8 @@ through OpenRouter for $0.0040 in total.
 - The label bands are this demo's choice; vidIQ would use its own.
 - The markdown parsers depend on vidIQ's current text format for `keyword_research` and `outliers`.
 - Perf numbers are from localhost with simulated throttling, not from a CDN in front of real users.
-- The public routes have no per-visitor rate limit, and the LLM spend cap lives in one process.
+- The hosted demo needs an access link, and Cloudflare's edge limits each IP to 20 requests per 10 s.
+  In Live mode the LLM spend cap lives in one process.
 - The CI workflow in `.github/workflows/ci.yml` passes `actionlint` but has not run on GitHub yet.
 
 ## Development
@@ -174,7 +182,7 @@ breaking the chip on purpose and watching all three fail. Files stay under 200 l
 
 ```
 src/lib/claims/     provenance, verifier, unbacked-claim finder, label table, number match, markdown sanitizer
-src/components/     UI: answer-text, claim-chip, claim-summary, cost-card, results/
+src/components/     UI: answer-text, claim-chip, claim-check-panel, cost-card, results/
 src/lib/llm/        planner, answer prompt with citations, grounding, OpenRouter client, spend guard
 src/lib/mcp/        MCP client, JSON-RPC/SSE reader, error mapping
 src/lib/schemas/    vidIQ output → typed views

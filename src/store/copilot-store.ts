@@ -31,6 +31,10 @@ export interface Turn {
   steps: Step[];
   answer: string;
   ttftMs: number | null;
+  /** Time the copilot spent on this turn (planning, tool calls, answer), excluding waits for the creator. */
+  workedMs: number | null;
+  /** The recorded turn shown on landing; its tool calls start collapsed behind "Worked for". */
+  featured?: true;
   error?: string;
 }
 

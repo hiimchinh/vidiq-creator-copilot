@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { buildSources } from "../../src/lib/claims/provenance";
-import { ESPRESSO_STEPS } from "../../src/lib/claims/test-sources";
+import { buildSources } from "./provenance";
+import { ESPRESSO_STEPS } from "./test-sources";
 import { naiveFlags } from "./naive-exact-checker";
 
 const sources = buildSources(ESPRESSO_STEPS);

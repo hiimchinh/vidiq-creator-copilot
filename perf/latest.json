@@ -1,6 +1,6 @@
 {
   "url": "http://localhost:3077/",
-  "measuredAt": "2026-11-04T04:54:26.361Z",
+  "measuredAt": "2026-11-04T10:12:27.179Z",
   "runs": 3,
   "budget": {
     "lcpMs": {
@@ -12,15 +12,15 @@
   },
   "results": {
     "desktop": {
-      "lcpMs": 84,
+      "lcpMs": 132,
       "cls": 0,
-      "jsKb": 152.3,
+      "jsKb": 154,
       "jsFiles": 6
     },
     "mobileSlow4g": {
-      "lcpMs": 472,
+      "lcpMs": 548,
       "cls": 0,
-      "jsKb": 152.3,
+      "jsKb": 154,
       "jsFiles": 6
     }
   },
