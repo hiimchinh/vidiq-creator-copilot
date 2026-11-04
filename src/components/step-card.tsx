@@ -37,7 +37,8 @@ export function StepCard({ turnId, step, replay }: { turnId: string; step: Step;
           <ChargeBadge step={step} replay={replay} />
         </span>
       </header>
-      {(step.status === "running" || step.status === "planned") && (
+      {step.status === "planned" && <p className="text-xs text-muted">Queued. Waits for the step above.</p>}
+      {step.status === "running" && (
         <div className="flex items-center gap-2 text-xs text-muted" role="status">
           <span className="size-3 animate-spin rounded-full border-2 border-line border-t-accent" aria-hidden="true" />
           Calling vidIQ…

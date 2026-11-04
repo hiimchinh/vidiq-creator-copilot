@@ -23,7 +23,7 @@ export function Composer({ onSubmit, busy }: { onSubmit: (prompt: string) => voi
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) submit(e);
         }}
-        placeholder="Ask about keywords, a title, or breakout videos…"
+        placeholder="Ask about keywords, titles, outliers…"
         className="max-h-40 min-h-9 flex-1 resize-none bg-transparent px-2 py-1.5 outline-none placeholder:text-muted focus-visible:outline-none"
       />
       <button type="submit" disabled={busy || value.trim().length < 2} className="rounded-md bg-accent px-3 py-2 text-xs font-semibold text-surface disabled:opacity-40">

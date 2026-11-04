@@ -8,13 +8,13 @@ export function CreditMeter() {
   const balance = useCopilotStore((s) => s.balance);
   return (
     <div className="tabular flex items-center gap-2 rounded-md border border-line bg-surface px-2.5 py-1 text-xs" aria-live="polite" data-testid="credit-meter">
-      <span className="text-muted">Session</span>
-      <span className="font-semibold text-credit">{spent} cr</span>
+      <span className="hidden text-muted sm:inline">Session</span>
+      <span className="font-semibold text-credit" title="Credits spent this session">{spent} cr</span>
       {balance !== null && (
         <>
           <span className="text-line" aria-hidden="true">|</span>
-          <span className="text-muted">{mode === "replay" ? "Demo balance" : "Balance"}</span>
-          <span className="font-semibold">{balance}</span>
+          <span className="hidden text-muted sm:inline">{mode === "replay" ? "Demo balance" : "Balance"}</span>
+          <span className="font-semibold" title={mode === "replay" ? "Demo balance" : "Balance"}>{balance}<span className="font-normal text-muted sm:hidden"> left</span></span>
         </>
       )}
     </div>
