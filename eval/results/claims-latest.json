@@ -1,0 +1,418 @@
+{
+  "naive": {
+    "fp": 9,
+    "fn": 5,
+    "ok": 29,
+    "bad": 9,
+    "fpRate": 0.3103448275862069,
+    "fnRate": 0.5555555555555556
+  },
+  "ours": {
+    "fp": 0,
+    "fn": 0,
+    "ok": 29,
+    "bad": 9,
+    "fpRate": 0,
+    "fnRate": 0
+  },
+  "results": [
+    {
+      "id": "real-espresso-yours",
+      "kind": "real false positive",
+      "naive": {
+        "fp": 1,
+        "fn": 0,
+        "ok": 6,
+        "bad": 0
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 6,
+        "bad": 0
+      },
+      "claims": [
+        {
+          "text": "99",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "100",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "98",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        }
+      ],
+      "extraFlags": []
+    },
+    {
+      "id": "real-marathon-your-current",
+      "kind": "real false positive",
+      "naive": {
+        "fp": 1,
+        "fn": 0,
+        "ok": 8,
+        "bad": 0
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 8,
+        "bad": 0
+      },
+      "claims": [
+        {
+          "text": "97",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "97",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "96",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "94",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "91",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "86",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        },
+        {
+          "text": "86",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "97",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        }
+      ],
+      "extraFlags": []
+    },
+    {
+      "id": "decoration-variants",
+      "kind": "constructed",
+      "naive": {
+        "fp": 6,
+        "fn": 0,
+        "ok": 7,
+        "bad": 0
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 7,
+        "bad": 0
+      },
+      "claims": [
+        {
+          "text": "99",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        },
+        {
+          "text": "99",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        }
+      ],
+      "extraFlags": []
+    },
+    {
+      "id": "fabricated-numbers",
+      "kind": "constructed",
+      "naive": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 0,
+        "bad": 3
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 0,
+        "bad": 3
+      },
+      "claims": [
+        {
+          "text": "50,000",
+          "ok": false,
+          "naive": true,
+          "ours": true
+        },
+        {
+          "text": "95",
+          "ok": false,
+          "naive": true,
+          "ours": true
+        },
+        {
+          "text": "93",
+          "ok": false,
+          "naive": true,
+          "ours": true
+        }
+      ],
+      "extraFlags": []
+    },
+    {
+      "id": "wrong-numbers",
+      "kind": "constructed",
+      "naive": {
+        "fp": 0,
+        "fn": 1,
+        "ok": 1,
+        "bad": 2
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 1,
+        "bad": 2
+      },
+      "claims": [
+        {
+          "text": "29",
+          "ok": false,
+          "naive": false,
+          "ours": true
+        },
+        {
+          "text": "9,201",
+          "ok": false,
+          "naive": true,
+          "ours": true
+        },
+        {
+          "text": "29",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        }
+      ],
+      "extraFlags": []
+    },
+    {
+      "id": "unit-mixups",
+      "kind": "constructed",
+      "naive": {
+        "fp": 1,
+        "fn": 2,
+        "ok": 1,
+        "bad": 2
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 1,
+        "bad": 2
+      },
+      "claims": [
+        {
+          "text": "60",
+          "ok": false,
+          "naive": false,
+          "ours": true
+        },
+        {
+          "text": "60%",
+          "ok": false,
+          "naive": false,
+          "ours": true
+        },
+        {
+          "text": "4.3K",
+          "ok": true,
+          "naive": true,
+          "ours": false
+        }
+      ],
+      "extraFlags": []
+    },
+    {
+      "id": "label-consistency",
+      "kind": "real inconsistency, rebuilt",
+      "naive": {
+        "fp": 0,
+        "fn": 1,
+        "ok": 5,
+        "bad": 1
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 5,
+        "bad": 1
+      },
+      "claims": [
+        {
+          "text": "60",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "(med)",
+          "ok": false,
+          "naive": false,
+          "ours": true
+        },
+        {
+          "text": "60.0",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "(high)",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "medium competition",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "43",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        }
+      ],
+      "extraFlags": []
+    },
+    {
+      "id": "own-replay-espresso",
+      "kind": "our own grounding gap",
+      "naive": {
+        "fp": 0,
+        "fn": 1,
+        "ok": 1,
+        "bad": 1
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 1,
+        "bad": 1
+      },
+      "claims": [
+        {
+          "text": "99",
+          "ok": true,
+          "naive": false,
+          "ours": false
+        },
+        {
+          "text": "high search volume",
+          "ok": false,
+          "naive": false,
+          "ours": true
+        }
+      ],
+      "extraFlags": []
+    },
+    {
+      "id": "non-claim-numbers",
+      "kind": "constructed",
+      "naive": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 0,
+        "bad": 0
+      },
+      "ours": {
+        "fp": 0,
+        "fn": 0,
+        "ok": 0,
+        "bad": 0
+      },
+      "claims": [],
+      "extraFlags": []
+    }
+  ]
+}

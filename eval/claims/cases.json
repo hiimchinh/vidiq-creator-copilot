@@ -1,0 +1,687 @@
+[
+  {
+    "id": "real-espresso-yours",
+    "kind": "real false positive",
+    "note": "Rebuilt from vidIQ AI Coach, 4 Nov 2026: the creator's own 99/100 was flagged because the table cell read '… *(yours)*'.",
+    "evidence": [
+      "docs/findings/espresso-scorecard.png",
+      "docs/findings/espresso-warning.png"
+    ],
+    "calls": [
+      {
+        "id": "call_score",
+        "tool": "vidiq_score_title",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To"
+        },
+        "view": {
+          "kind": "titleScore",
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To",
+          "score": 99
+        }
+      },
+      {
+        "id": "call_titles",
+        "tool": "vidiq_generate_titles",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To"
+        },
+        "view": {
+          "kind": "titles",
+          "titles": [
+            {
+              "title": "I Tested 5 Budget Espresso Machines So You Don't Have To",
+              "score": 99
+            },
+            {
+              "title": "I Tested 5 Cheap Espresso Machines So You Don't Have To",
+              "score": 99
+            },
+            {
+              "title": "The Best Cheap Espresso Machine (I Tested 5 So You Don't Have To)",
+              "score": 100
+            },
+            {
+              "title": "I Tested 5 Cheap Espresso Machines — Only One Was Worth It",
+              "score": 98
+            }
+          ]
+        }
+      }
+    ],
+    "answer": "Your title already scores [[c1.score=99]]/100 — you're 1 point from the ceiling.\n| # | Title | Score |\n|---|---|---|\n| 1 | I Tried 5 Cheap Espresso Machines So You Don't Have To *(yours)* | [[c1.score=99]] |\n| 2 | I Tested 5 Budget Espresso Machines So You Don't Have To | [[c2.titles.0.score=99]] |\n| 3 | I Tested 5 Cheap Espresso Machines So You Don't Have To | [[c2.titles.1.score=99]] |\n| 4 | The Best Cheap Espresso Machine (I Tested 5 So You Don't Have To) | [[c2.titles.2.score=100]] |\n| 5 | I Tested 5 Cheap Espresso Machines — Only One Was Worth It | [[c2.titles.3.score=98]] |",
+    "truth": [
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "100",
+        "ok": true
+      },
+      {
+        "text": "98",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "id": "real-marathon-your-current",
+    "kind": "real false positive",
+    "note": "Rebuilt from vidIQ AI Coach, 4 Nov 2026: the creator's own 86/100 was flagged because the row read 'Your current: \"…\"'.",
+    "evidence": [
+      "docs/findings/marathon-table.png",
+      "docs/findings/marathon-warning.png"
+    ],
+    "calls": [
+      {
+        "id": "call_score",
+        "tool": "vidiq_score_title",
+        "args": {
+          "title": "My First Marathon Training Week"
+        },
+        "view": {
+          "kind": "titleScore",
+          "title": "My First Marathon Training Week",
+          "score": 86
+        }
+      },
+      {
+        "id": "call_titles",
+        "tool": "vidiq_generate_titles",
+        "args": {
+          "title": "My First Marathon Training Week"
+        },
+        "view": {
+          "kind": "titles",
+          "titles": [
+            {
+              "title": "First Marathon Training: Week 1 Didn't Go To Plan",
+              "score": 97
+            },
+            {
+              "title": "My First Marathon Training Week Was a Disaster (Week 1 of 20)",
+              "score": 97
+            },
+            {
+              "title": "I Started Training for My First Marathon — 20 Weeks to Go",
+              "score": 96
+            },
+            {
+              "title": "Week 1 of Training for My First Marathon (It Hurt)",
+              "score": 94
+            },
+            {
+              "title": "Training for My First Marathon: Week 1 of 20",
+              "score": 91
+            }
+          ]
+        }
+      }
+    ],
+    "answer": "| # | Title | Score |\n|---|---|---|\n| 1 | \"First Marathon Training: Week 1 Didn't Go To Plan\" | [[c2.titles.0.score=97]] |\n| 2 | \"My First Marathon Training Week Was a Disaster (Week 1 of 20)\" | [[c2.titles.1.score=97]] |\n| 3 | \"I Started Training for My First Marathon — 20 Weeks to Go\" | [[c2.titles.2.score=96]] |\n| 4 | \"Week 1 of Training for My First Marathon (It Hurt)\" | [[c2.titles.3.score=94]] |\n| 5 | \"Training for My First Marathon: Week 1 of 20\" | [[c2.titles.4.score=91]] |\n| — | Your current: \"My First Marathon Training Week\" | [[c1.score=86]] |\nYour original isn't broken — [[c1.score=86]] is respectable. Both hit [[c2.titles.0.score=97]], so pick on content, not score.",
+    "truth": [
+      {
+        "text": "97",
+        "ok": true
+      },
+      {
+        "text": "97",
+        "ok": true
+      },
+      {
+        "text": "96",
+        "ok": true
+      },
+      {
+        "text": "94",
+        "ok": true
+      },
+      {
+        "text": "91",
+        "ok": true
+      },
+      {
+        "text": "86",
+        "ok": true
+      },
+      {
+        "text": "86",
+        "ok": true
+      },
+      {
+        "text": "97",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "id": "decoration-variants",
+    "kind": "constructed",
+    "note": "The same correct 99 written with the decorations models use: emoji, '(original)', a prefix, bold, lower case, curly quotes.",
+    "calls": [
+      {
+        "id": "call_score",
+        "tool": "vidiq_score_title",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To"
+        },
+        "view": {
+          "kind": "titleScore",
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To",
+          "score": 99
+        }
+      }
+    ],
+    "answer": "| Title | Score |\n|---|---|\n| I Tried 5 Cheap Espresso Machines So You Don't Have To ✅ | [[c1.score=99]] |\n| I Tried 5 Cheap Espresso Machines So You Don't Have To (original) | [[c1.score=99]] |\n| Current title — I Tried 5 Cheap Espresso Machines So You Don't Have To | [[c1.score=99]] |\n| **I Tried 5 Cheap Espresso Machines So You Don't Have To** | [[c1.score=99]] |\n| i tried 5 cheap espresso machines so you don't have to | [[c1.score=99]] |\n“I Tried 5 Cheap Espresso Machines So You Don’t Have To” scores [[c1.score=99]]/100.\n\"I Tried 5 Cheap Espresso Machines So You Don't Have To\" scores [[c1.score=99]]/100.",
+    "truth": [
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "99",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "id": "fabricated-numbers",
+    "kind": "constructed",
+    "note": "Numbers no tool returned: a search count, a title score in a table and a citation to a call that never ran.",
+    "calls": [
+      {
+        "id": "call_score",
+        "tool": "vidiq_score_title",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To"
+        },
+        "view": {
+          "kind": "titleScore",
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To",
+          "score": 99
+        }
+      },
+      {
+        "id": "call_kw",
+        "tool": "vidiq_keyword_research",
+        "args": {
+          "keyword": "home espresso",
+          "mode": "research"
+        },
+        "view": {
+          "kind": "keywords",
+          "notes": [],
+          "rows": [
+            {
+              "keyword": "home espresso",
+              "section": "relatedKeywords",
+              "volume": 55,
+              "competition": 29,
+              "overall": 61,
+              "monthlySearches": 4836,
+              "growthPct": null
+            },
+            {
+              "keyword": "home barista",
+              "section": "relatedKeywords",
+              "volume": 54,
+              "competition": 26,
+              "overall": 62,
+              "monthlySearches": 4341,
+              "growthPct": null
+            },
+            {
+              "keyword": "espresso machine tutorial",
+              "section": "relatedKeywords",
+              "volume": 59,
+              "competition": 34,
+              "overall": 62,
+              "monthlySearches": 9021,
+              "growthPct": null
+            },
+            {
+              "keyword": "budget espresso machine",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 60,
+              "overall": 51,
+              "monthlySearches": 8368,
+              "growthPct": null
+            },
+            {
+              "keyword": "cheap espresso machine",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 43,
+              "overall": 54,
+              "monthlySearches": 3191,
+              "growthPct": null
+            },
+            {
+              "keyword": "best espresso machine for home",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 28.5,
+              "overall": 69,
+              "monthlySearches": 33475,
+              "growthPct": null
+            }
+          ]
+        }
+      }
+    ],
+    "answer": "budget espresso machine gets about 50,000 searches a month, so lead with it.\n| Title | Score |\n|---|---|\n| Espresso Machines Ranked Under $200 | 95 |\nYour thumbnail text scores [[c3.score=93]] as well.",
+    "truth": [
+      {
+        "text": "50,000",
+        "ok": false
+      },
+      {
+        "text": "95",
+        "ok": false
+      },
+      {
+        "text": "93",
+        "ok": false
+      }
+    ]
+  },
+  {
+    "id": "wrong-numbers",
+    "kind": "constructed",
+    "note": "Real fields with the wrong value: one value belongs to another keyword, one has swapped digits; the last one is correct.",
+    "calls": [
+      {
+        "id": "call_kw",
+        "tool": "vidiq_keyword_research",
+        "args": {
+          "keyword": "home espresso",
+          "mode": "research"
+        },
+        "view": {
+          "kind": "keywords",
+          "notes": [],
+          "rows": [
+            {
+              "keyword": "home espresso",
+              "section": "relatedKeywords",
+              "volume": 55,
+              "competition": 29,
+              "overall": 61,
+              "monthlySearches": 4836,
+              "growthPct": null
+            },
+            {
+              "keyword": "home barista",
+              "section": "relatedKeywords",
+              "volume": 54,
+              "competition": 26,
+              "overall": 62,
+              "monthlySearches": 4341,
+              "growthPct": null
+            },
+            {
+              "keyword": "espresso machine tutorial",
+              "section": "relatedKeywords",
+              "volume": 59,
+              "competition": 34,
+              "overall": 62,
+              "monthlySearches": 9021,
+              "growthPct": null
+            },
+            {
+              "keyword": "budget espresso machine",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 60,
+              "overall": 51,
+              "monthlySearches": 8368,
+              "growthPct": null
+            },
+            {
+              "keyword": "cheap espresso machine",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 43,
+              "overall": 54,
+              "monthlySearches": 3191,
+              "growthPct": null
+            },
+            {
+              "keyword": "best espresso machine for home",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 28.5,
+              "overall": 69,
+              "monthlySearches": 33475,
+              "growthPct": null
+            }
+          ]
+        }
+      }
+    ],
+    "answer": "home barista has competition [[c1.rows.home barista.competition=29]], lower than most. espresso machine tutorial gets [[c1.rows.espresso machine tutorial.monthlySearches=9,201]] searches a month. home espresso has competition [[c1.rows.home espresso.competition=29]].",
+    "truth": [
+      {
+        "text": "29",
+        "ok": false
+      },
+      {
+        "text": "9,201",
+        "ok": false
+      },
+      {
+        "text": "29",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "id": "unit-mixups",
+    "kind": "constructed",
+    "note": "Right digits, wrong unit: the competition score shown as searches and as a percentage; then a correct abbreviation.",
+    "calls": [
+      {
+        "id": "call_kw",
+        "tool": "vidiq_keyword_research",
+        "args": {
+          "keyword": "home espresso",
+          "mode": "research"
+        },
+        "view": {
+          "kind": "keywords",
+          "notes": [],
+          "rows": [
+            {
+              "keyword": "home espresso",
+              "section": "relatedKeywords",
+              "volume": 55,
+              "competition": 29,
+              "overall": 61,
+              "monthlySearches": 4836,
+              "growthPct": null
+            },
+            {
+              "keyword": "home barista",
+              "section": "relatedKeywords",
+              "volume": 54,
+              "competition": 26,
+              "overall": 62,
+              "monthlySearches": 4341,
+              "growthPct": null
+            },
+            {
+              "keyword": "espresso machine tutorial",
+              "section": "relatedKeywords",
+              "volume": 59,
+              "competition": 34,
+              "overall": 62,
+              "monthlySearches": 9021,
+              "growthPct": null
+            },
+            {
+              "keyword": "budget espresso machine",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 60,
+              "overall": 51,
+              "monthlySearches": 8368,
+              "growthPct": null
+            },
+            {
+              "keyword": "cheap espresso machine",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 43,
+              "overall": 54,
+              "monthlySearches": 3191,
+              "growthPct": null
+            },
+            {
+              "keyword": "best espresso machine for home",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 28.5,
+              "overall": 69,
+              "monthlySearches": 33475,
+              "growthPct": null
+            }
+          ]
+        }
+      }
+    ],
+    "answer": "budget espresso machine gets only [[c1.rows.budget espresso machine.monthlySearches=60]] searches a month. Its competition is [[c1.rows.budget espresso machine.competition=60%]]. home barista has [[c1.rows.home barista.monthlySearches=4.3K]] monthly searches.",
+    "truth": [
+      {
+        "text": "60",
+        "ok": false
+      },
+      {
+        "text": "60%",
+        "ok": false
+      },
+      {
+        "text": "4.3K",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "id": "label-consistency",
+    "kind": "real inconsistency, rebuilt",
+    "note": "vidIQ labelled competition 60 as '(med)' in one answer and '(high)' in another. Labels must follow one threshold table.",
+    "evidence": [
+      "docs/findings/competition-med.png",
+      "docs/findings/competition-high.png"
+    ],
+    "calls": [
+      {
+        "id": "call_kw",
+        "tool": "vidiq_keyword_research",
+        "args": {
+          "keyword": "home espresso",
+          "mode": "research"
+        },
+        "view": {
+          "kind": "keywords",
+          "notes": [],
+          "rows": [
+            {
+              "keyword": "home espresso",
+              "section": "relatedKeywords",
+              "volume": 55,
+              "competition": 29,
+              "overall": 61,
+              "monthlySearches": 4836,
+              "growthPct": null
+            },
+            {
+              "keyword": "home barista",
+              "section": "relatedKeywords",
+              "volume": 54,
+              "competition": 26,
+              "overall": 62,
+              "monthlySearches": 4341,
+              "growthPct": null
+            },
+            {
+              "keyword": "espresso machine tutorial",
+              "section": "relatedKeywords",
+              "volume": 59,
+              "competition": 34,
+              "overall": 62,
+              "monthlySearches": 9021,
+              "growthPct": null
+            },
+            {
+              "keyword": "budget espresso machine",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 60,
+              "overall": 51,
+              "monthlySearches": 8368,
+              "growthPct": null
+            },
+            {
+              "keyword": "cheap espresso machine",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 43,
+              "overall": 54,
+              "monthlySearches": 3191,
+              "growthPct": null
+            },
+            {
+              "keyword": "best espresso machine for home",
+              "section": "relatedKeywords",
+              "volume": null,
+              "competition": 28.5,
+              "overall": 69,
+              "monthlySearches": 33475,
+              "growthPct": null
+            }
+          ]
+        }
+      }
+    ],
+    "answer": "budget espresso machine: [[c1.rows.budget espresso machine.competition=60]] (med).\nbudget espresso machine: [[c1.rows.budget espresso machine.competition=60.0]] (high).\ncheap espresso machine has medium competition at [[c1.rows.cheap espresso machine.competition=43]].",
+    "truth": [
+      {
+        "text": "60",
+        "ok": true
+      },
+      {
+        "text": "(med)",
+        "ok": false
+      },
+      {
+        "text": "60.0",
+        "ok": true
+      },
+      {
+        "text": "(high)",
+        "ok": true
+      },
+      {
+        "text": "medium competition",
+        "ok": true
+      },
+      {
+        "text": "43",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "id": "own-replay-espresso",
+    "kind": "our own grounding gap",
+    "note": "Our Replay answer recorded on 4 Nov 2026, with its numbers cited. 'the high search volume of \"Amazon\"' has no data behind it.",
+    "calls": [
+      {
+        "id": "call_score",
+        "tool": "vidiq_score_title",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To"
+        },
+        "view": {
+          "kind": "titleScore",
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To",
+          "score": 99
+        }
+      },
+      {
+        "id": "call_titles",
+        "tool": "vidiq_generate_titles",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To"
+        },
+        "view": {
+          "kind": "titles",
+          "titles": [
+            {
+              "title": "I Tested 5 Budget Espresso Machines So You Don't Have To",
+              "score": 99
+            },
+            {
+              "title": "I Tested 5 Cheap Espresso Machines So You Don't Have To",
+              "score": 99
+            },
+            {
+              "title": "The Best Cheap Espresso Machine (I Tested 5 So You Don't Have To)",
+              "score": 100
+            },
+            {
+              "title": "I Tested 5 Cheap Espresso Machines — Only One Was Worth It",
+              "score": 98
+            }
+          ]
+        }
+      }
+    ],
+    "answer": "Your current title is excellent, scoring a [[c1.score=99]]/100. Since the score is already near-perfect, focus on high-intent keywords rather than changing the structure.\n- Use \"I Tested The Cheapest Espresso Machines On Amazon\" to leverage the high search volume of \"Amazon,\" which adds immediate credibility to your budget claim.\n- Keep the \"So You Don't Have To\" framing in your description.",
+    "truth": [
+      {
+        "text": "99",
+        "ok": true
+      },
+      {
+        "text": "high search volume",
+        "ok": false
+      }
+    ]
+  },
+  {
+    "id": "non-claim-numbers",
+    "kind": "constructed",
+    "note": "Numbers that are not metrics must not be flagged: counts, ordinals, list markers and numbers inside titles.",
+    "calls": [
+      {
+        "id": "call_score",
+        "tool": "vidiq_score_title",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To"
+        },
+        "view": {
+          "kind": "titleScore",
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To",
+          "score": 99
+        }
+      }
+    ],
+    "answer": "Post 3 videos a week for 2 months. \"Week 1 of 20\" works as a series hook, and #1 is the safer pick.\n1. Film the lineup.\n2. Keep \"I Tried 5 Cheap Espresso Machines\" as the title.",
+    "truth": []
+  }
+]

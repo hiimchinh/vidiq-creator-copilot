@@ -19,7 +19,8 @@
     "perf": "tsx scripts/perf.ts",
     "record": "tsx scripts/record-fixtures.ts",
     "demo": "next build && next start -p 3000",
-    "check": "tsc --noEmit && vitest run"
+    "check": "tsc --noEmit && vitest run",
+    "eval:claims": "tsx scripts/eval-claims.ts"
   },
   "dependencies": {
     "next": "16.4.5",
