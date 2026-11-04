@@ -4,7 +4,7 @@ async function runKeywordScenario(page: Page) {
   await page.goto("/");
   await page.getByRole("button", { name: "Keyword research: home espresso" }).click();
   await page.getByRole("button", { name: "Run for 5 credits" }).click();
-  const answer = page.getByTestId("answer");
+  const answer = page.getByTestId("answer").last();
   await expect(answer).toHaveAttribute("aria-busy", "false", { timeout: 10_000 });
   return answer;
 }
@@ -22,7 +22,7 @@ test.describe("claim citations in the answer", () => {
     await expect(tip).toContainText("Args: keyword “home espresso”");
     await expect(tip).toContainText("Field: c1.rows.home barista.competition");
     await expect(tip).toContainText("Raw value: 26");
-    await expect(page.getByTestId("claim-summary")).toContainText("flagged");
+    await expect(page.getByTestId("claim-check-note").last()).toContainText("flagged");
   });
 
   test("is keyboard accessible: focus opens the details and Escape closes them", async ({ page }) => {

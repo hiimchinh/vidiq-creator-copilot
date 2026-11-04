@@ -4,14 +4,14 @@ import { useEffect, useRef } from "react";
 import { submitPrompt } from "@/lib/copilot/turn-runner";
 import type { ScenarioSummary } from "@/lib/replay/replay-store";
 import { track } from "@/lib/telemetry/track";
-import { useCopilotStore } from "@/store/copilot-store";
+import { type Turn, useCopilotStore } from "@/store/copilot-store";
 import { useKeyStore } from "@/store/key-store";
 import { Composer } from "./composer";
 import { ScenarioChips } from "./scenario-chips";
 import { SettingsPanel } from "./settings-panel";
 import { TurnView } from "./turn-view";
 
-export function Copilot({ scenarios, liveEnabled }: { scenarios: ScenarioSummary[]; liveEnabled: boolean }) {
+export function Copilot({ scenarios, liveEnabled, featured }: { scenarios: ScenarioSummary[]; liveEnabled: boolean; featured?: Turn }) {
   const turns = useCopilotStore((s) => s.turns);
   const mode = useCopilotStore((s) => s.mode);
   const hasKey = useKeyStore((s) => s.vidiqKey.length > 0);
@@ -31,7 +31,8 @@ export function Copilot({ scenarios, liveEnabled }: { scenarios: ScenarioSummary
   }, [liveEnabled]);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ block: "end", behavior: "smooth" });
+    // Landing keeps the recorded turn in view; only a new question scrolls down.
+    if (turns.length > 0) endRef.current?.scrollIntoView({ block: "end", behavior: "smooth" });
   }, [turns.length]);
 
   const blocked = busy || (mode === "live" && !hasKey);
@@ -39,7 +40,8 @@ export function Copilot({ scenarios, liveEnabled }: { scenarios: ScenarioSummary
   return (
     <div className="flex flex-col gap-4">
       <SettingsPanel />
-      <div className="flex flex-col gap-6" aria-label="Conversation">
+      <div className="flex flex-col gap-10" aria-label="Conversation">
+        {featured && <TurnView turn={featured} />}
         {turns.map((turn) => (
           <TurnView key={turn.id} turn={turn} />
         ))}

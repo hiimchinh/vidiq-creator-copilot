@@ -17,7 +17,7 @@ test.describe("chat flow in Replay mode", () => {
     await expect(page.getByTestId("keyword-table")).toContainText("17 keywords");
     await expect(page.getByTestId("charge-badge")).toHaveText("5 credits · simulated");
 
-    const answer = page.getByTestId("answer");
+    const answer = page.getByTestId("answer").last();
     await expect(answer).toHaveAttribute("aria-busy", "true"); // streaming has started
     await expect(answer).toContainText("home barista", { timeout: 10_000 });
     await expect(answer).toHaveAttribute("aria-busy", "false");
@@ -43,7 +43,7 @@ test.describe("chat flow in Replay mode", () => {
     await second.getByRole("button", { name: "Skip" }).click();
 
     await expect(page.getByText("Skipped · 0 credits")).toBeVisible();
-    await expect(page.getByTestId("answer")).toContainText("You skipped 1 paid call");
+    await expect(page.getByTestId("answer").last()).toContainText("You skipped 1 paid call");
     await expect(page.getByTestId("credit-meter")).toContainText("5 cr");
   });
 

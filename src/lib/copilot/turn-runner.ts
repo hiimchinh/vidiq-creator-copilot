@@ -10,13 +10,17 @@ import { getCached, putCached } from "./session-cache";
 const store = () => useCopilotStore.getState();
 const turnOf = (id: string): Turn | undefined => store().turns.find((t) => t.id === id);
 const newId = () => Math.random().toString(36).slice(2, 10);
+const addWorked = (turnId: string, started: number) =>
+  store().updateTurn(turnId, (t) => ({ workedMs: (t.workedMs ?? 0) + Math.round(performance.now() - started) }));
 
 export async function submitPrompt(prompt: string): Promise<void> {
   const { mode, addTurn, updateTurn } = store();
   const id = newId();
-  addTurn({ id, prompt, mode, status: "planning", note: "", rejected: [], steps: [], answer: "", ttftMs: null });
+  addTurn({ id, prompt, mode, status: "planning", note: "", rejected: [], steps: [], answer: "", ttftMs: null, workedMs: null });
   try {
+    const planStarted = performance.now();
     const plan = await postPlan(mode, prompt);
+    addWorked(id, planStarted);
     const steps: Step[] = plan.calls.map((call) => ({
       id: call.id || newId(),
       tool: call.tool,
@@ -93,6 +97,7 @@ async function runStep(turnId: string, step: Step): Promise<void> {
   } catch (error) {
     updateStep(turnId, step.id, { status: "error", view: { kind: "error", errorKind: "network", message: (error as Error).message } });
   }
+  addWorked(turnId, started);
 }
 
 export async function confirmStep(turnId: string, stepId: string): Promise<void> {
@@ -127,8 +132,10 @@ async function answer(turnId: string): Promise<void> {
         track("answer", { mode: turn.mode, ttft_ms: firstTokenMs, server_ttft_ms: event.ttftMs, usd: event.costUsd });
       }
     }
+    addWorked(turnId, started);
     updateTurn(turnId, { status: "done", ttftMs: firstTokenMs });
   } catch (error) {
+    addWorked(turnId, started);
     updateTurn(turnId, { status: "done", error: (error as Error).message });
   }
 }

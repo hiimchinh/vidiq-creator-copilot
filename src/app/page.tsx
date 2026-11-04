@@ -2,6 +2,7 @@ import { AppHeader } from "@/components/app-header";
 import { Copilot } from "@/components/copilot";
 import { WebVitals } from "@/components/web-vitals";
 import { isLiveModeEnabled } from "@/lib/demo/live-mode";
+import { featuredTurn } from "@/lib/replay/featured-turn";
 import { scenarioSummaries } from "@/lib/replay/replay-store";
 
 const README_RUN_LOCALLY = "https://github.com/hiimchinh/vidiq-creator-copilot#run-it-locally-one-command-no-keys";
@@ -12,7 +13,7 @@ export default function Home() {
   return (
     <>
       <AppHeader liveEnabled={liveEnabled} />
-      <main className="mx-auto flex max-w-5xl flex-col gap-4 px-4 pt-6">
+      <main className="mx-auto flex max-w-3xl flex-col gap-6 px-4 pt-6">
         <section className="flex flex-col gap-2">
           <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">Grow your channel without burning credits.</h1>
           <p className="max-w-2xl text-muted">
@@ -36,7 +37,7 @@ export default function Home() {
             </p>
           )}
         </section>
-        <Copilot scenarios={scenarioSummaries()} liveEnabled={liveEnabled} />
+        <Copilot scenarios={scenarioSummaries()} liveEnabled={liveEnabled} featured={featuredTurn()} />
       </main>
       <WebVitals />
     </>
