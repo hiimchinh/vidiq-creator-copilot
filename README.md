@@ -49,9 +49,12 @@ inconsistent "(med)"/"(high)" label and this repo's own earlier ungrounded answe
 | Naive exact-string match, a reconstruction of the observed behaviour | 9 / 29 (31.0%) | 5 / 9 (55.6%) |
 | Provenance binding (this repo) | 0 / 29 (0%) | 0 / 9 (0%) |
 
-The same command checks the seven Replay answers, re-recorded with the citation prompt: 33 figures and
+The same command checks the seven Replay answers, re-recorded with the citation prompt: 37 figures and
 labels verified, 3 model-written labels flagged (for example "a high search volume of 8.3K", which is
 medium by the table). The earlier espresso answer's "high search volume of Amazon" is flagged too.
+The espresso answer is shown in AI Coach's Title Scorecard layout: the recorded sentences and citations,
+plus a table with "(yours)" on the creator's row. Under the answer, a toggle runs both checks on it:
+the exact-text check flags the creator's own 99, the provenance check verifies all 8 scores.
 
 ## Run it locally (one command, no keys)
 
@@ -179,7 +182,7 @@ breaking the chip on purpose and watching all three fail. Files stay under 200 l
 
 ```
 src/lib/claims/     provenance, verifier, unbacked-claim finder, label table, number match, markdown sanitizer
-src/components/     UI: answer-text, claim-chip, claim-summary, cost-card, results/
+src/components/     UI: answer-text, claim-chip, claim-check-panel, cost-card, results/
 src/lib/llm/        planner, answer prompt with citations, grounding, OpenRouter client, spend guard
 src/lib/mcp/        MCP client, JSON-RPC/SSE reader, error mapping
 src/lib/schemas/    vidIQ output → typed views

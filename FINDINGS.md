@@ -103,7 +103,7 @@ all. In the eval, "60 (med)" is flagged and "60.0 (high)" passes; the naive chec
 This repo's earlier recorded answer for the espresso question said: use a title "to leverage the high
 search volume of 'Amazon'". No tool returned anything about Amazon. That case is in the eval
 (`own-replay-espresso`) and is flagged. The Replay answers were then re-recorded with the citation
-prompt (OpenRouter only, 0 vidIQ credits). Across the seven recorded answers the checker found 33
+prompt (OpenRouter only, 0 vidIQ credits). Across the seven recorded answers the checker found 37
 cited figures and labels that match the tool data, and flagged 3 model-written labels:
 
 - "avoiding the high competition of broader terms like 'espresso'": no cited number behind it.
