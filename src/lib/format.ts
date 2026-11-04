@@ -1,3 +1,5 @@
+import { type Label, labelFor } from "./claims/metric-labels";
+
 export { formatCost } from "./credits/cost-of";
 
 const compact = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
@@ -27,13 +29,12 @@ export function argsSummary(args: Record<string, unknown>): string {
     .join(" · ");
 }
 
-export type Band = "high" | "medium" | "low";
+export type Band = Label;
 
-/** vidIQ-style bands: for competition, lower is better; for the others, higher is better. */
+/** Labels come from the one threshold table in claims/metric-labels; a title score uses the overall bands. */
 export function band(metric: "volume" | "competition" | "overall" | "score", value: number | null): Band | null {
   if (value === null) return null;
-  if (metric === "competition") return value <= 30 ? "low" : value <= 60 ? "medium" : "high";
-  return value >= 60 ? "high" : value >= 40 ? "medium" : "low";
+  return labelFor(metric === "score" ? "overall" : metric, value) ?? null;
 }
 
 export function bandTone(metric: "volume" | "competition" | "overall" | "score", b: Band | null): "good" | "warn" | "bad" | "none" {
