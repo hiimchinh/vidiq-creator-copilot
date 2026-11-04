@@ -3,6 +3,9 @@
 An independent demo built on the public [vidIQ MCP](https://support.vidiq.com/en/articles/15082430-vidiq-mcp).
 It is not made or endorsed by vidIQ and uses no vidIQ brand assets.
 
+**Live demo: https://vidiq-demo.hiimchinh.com** (Replay only: it answers the recorded example
+questions from stored tool results and spends no credits. Live mode runs locally with your own keys.)
+
 Chinh Hoang designed it around one question: **can a creator trust each number in an AI answer?**
 On 4 Nov 2026 he tested vidIQ's AI Coach with three questions and found that its claim check called
 the creator's own correct title score (99/100 and 86/100) "unverified", because the model had written
@@ -153,7 +156,8 @@ through OpenRouter for $0.0040 in total.
 - The label bands are this demo's choice; vidIQ would use its own.
 - The markdown parsers depend on vidIQ's current text format for `keyword_research` and `outliers`.
 - Perf numbers are from localhost with simulated throttling, not from a CDN in front of real users.
-- The public routes have no per-visitor rate limit, and the LLM spend cap lives in one process.
+- The public demo limits `/api/*` to 20 requests per 10 s per IP at Cloudflare's edge. In Live mode
+  the LLM spend cap lives in one process.
 - The CI workflow in `.github/workflows/ci.yml` passes `actionlint` but has not run on GitHub yet.
 
 ## Development
