@@ -1,12 +1,16 @@
 "use client";
 
+import { useMemo } from "react";
+import { answerSources } from "@/lib/copilot/answer-sources";
 import { toolLabel } from "@/lib/format";
 import type { Turn } from "@/store/copilot-store";
 import { AnswerText } from "./answer-text";
+import { ClaimSummary } from "./claim-summary";
 import { StepCard } from "./step-card";
 
 export function TurnView({ turn }: { turn: Turn }) {
   const streaming = turn.status === "answering";
+  const sources = useMemo(() => answerSources(turn.steps), [turn.steps]);
   return (
     <article className="flex flex-col gap-3" data-testid="turn">
       <div className="self-end rounded-lg bg-accent-soft px-3 py-2 text-ink sm:max-w-[80%]">{turn.prompt}</div>
@@ -24,7 +28,8 @@ export function TurnView({ turn }: { turn: Turn }) {
       ))}
       {(turn.answer || streaming) && (
         <div className="rounded-lg border border-line bg-surface p-3">
-          <AnswerText text={turn.answer} streaming={streaming} />
+          <AnswerText text={turn.answer} streaming={streaming} sources={sources} />
+          {!streaming && <ClaimSummary text={turn.answer} sources={sources} />}
           {turn.ttftMs !== null && !streaming && (
             <p className="tabular mt-2 text-[11px] text-muted">First token in {turn.ttftMs} ms</p>
           )}

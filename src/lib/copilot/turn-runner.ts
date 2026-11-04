@@ -4,6 +4,7 @@ import { costOf } from "../credits/cost-of";
 import { decideRun } from "../credits/run-policy";
 import { track } from "../telemetry/track";
 import { postPlan, postTool, streamAnswer } from "./api-client";
+import { answeredSteps } from "./answer-sources";
 import { getCached, putCached } from "./session-cache";
 
 const store = () => useCopilotStore.getState();
@@ -111,9 +112,7 @@ async function answer(turnId: string): Promise<void> {
   if (!turn || turn.status === "answering" || turn.status === "done") return;
   const { updateTurn } = store();
   updateTurn(turnId, { status: "answering", answer: "" });
-  const evidence = turn.steps
-    .filter((s) => s.status === "done" && s.resultText !== undefined)
-    .map((s) => ({ tool: s.tool, args: s.args, text: s.resultText ?? "" }));
+  const evidence = answeredSteps(turn.steps).map((s) => ({ tool: s.tool, args: s.args, text: s.resultText ?? "" }));
   const skipped = turn.steps.filter((s) => s.status === "skipped").length;
   const started = performance.now();
   let firstTokenMs: number | null = null;
