@@ -30,6 +30,8 @@ export interface AnswerCheck {
 /** [[c1.score=99]], [[c3.rows.home barista.competition=26]] or the bare form [[c1.score]]. */
 const TOKEN = /\[\[\s*(c\d+)\.([^\]=]+?)\s*(?:=\s*([^\]]+?))?\s*\]\]/g;
 const PARTIAL = /\[\[[^\]]*\]?$/;
+/** Any other [[…]]: shown as its value, never as raw brackets, and flagged. */
+const MALFORMED = /\[\[([^\]]*)\]\]/g;
 
 function citedClaim(sources: Source[], m: RegExpMatchArray): ClaimSegment {
   const [raw, ref = "", path = "", written] = m;
@@ -78,6 +80,13 @@ export function verifyAnswer(input: string, sources: Source[]): AnswerCheck {
   let masked = text;
   for (const c of cited) masked = masked.slice(0, c.start) + " ".repeat(c.end - c.start) + masked.slice(c.end);
 
+  const malformed: ClaimSegment[] = [...masked.matchAll(MALFORMED)].map((m) => {
+    const start = m.index ?? 0;
+    const display = (m[1] ?? "").split("=").at(-1)?.trim() || "?";
+    return { kind: "claim", display, check: "no-source", reason: "This citation could not be read.", start, end: start + m[0].length };
+  });
+  for (const c of malformed) masked = masked.slice(0, c.start) + " ".repeat(c.end - c.start) + masked.slice(c.end);
+
   const bare: ClaimSegment[] = bareMetricNumbers(masked).map((n) => ({
     kind: "claim",
     display: n.text,
@@ -87,7 +96,7 @@ export function verifyAnswer(input: string, sources: Source[]): AnswerCheck {
     end: n.end,
   }));
   const labels = labelMentions(masked).flatMap((m) => labelClaim(m, cited, masked) ?? []);
-  const claims = [...cited, ...bare, ...labels].sort((a, b) => a.start - b.start);
+  const claims = [...cited, ...malformed, ...bare, ...labels].sort((a, b) => a.start - b.start);
 
   const segments: Segment[] = [];
   let last = 0;

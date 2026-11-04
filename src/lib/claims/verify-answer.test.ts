@@ -85,6 +85,11 @@ describe("verifyAnswer: streaming and summary", () => {
     expect(segments).toEqual([{ kind: "text", text: "It scores " }]);
   });
 
+  it("never shows a malformed citation as raw brackets; it becomes an unverified figure", () => {
+    const { segments } = verifyAnswer("It scores [[score=99]] today.", ESPRESSO_SOURCES);
+    expect(segments).toMatchObject([{ kind: "text", text: "It scores " }, { kind: "claim", display: "99", check: "no-source" }, { kind: "text", text: " today." }]);
+  });
+
   it("counts verified and flagged claims", () => {
     const { summary } = verifyAnswer("[[c1.score=99]] and [[c1.score=98]] and 50,000 searches.", ESPRESSO_SOURCES);
     expect(summary).toEqual({ verified: 1, flagged: 2 });
