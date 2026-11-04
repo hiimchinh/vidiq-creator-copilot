@@ -1,0 +1,75 @@
+{
+  "id": "longtail-budget-travel",
+  "label": "Long-tail keywords: budget travel (40 rows)",
+  "prompt": "Give me 40 long-tail keyword variations for 'budget travel' so I can pick low-competition ones.",
+  "model": "google/gemini-3.1-flash-lite",
+  "recordedAt": "2026-11-04T03:08:32.439Z",
+  "plan": {
+    "calls": [
+      {
+        "id": "call_54971",
+        "tool": "vidiq_keyword_research",
+        "args": {
+          "keyword": "budget travel",
+          "mode": "matching_terms",
+          "limit": 40,
+          "userGoal": "Find low-competition long-tail keywords for budget travel content."
+        },
+        "parse": "ok"
+      }
+    ],
+    "rejected": [],
+    "note": ""
+  },
+  "results": {
+    "vidiq_keyword_research:{\"keyword\":\"budget travel\",\"limit\":40,\"mode\":\"matching_terms\"}": {
+      "ok": true,
+      "text": "## Keyword research — mode: matching_terms · query: budget travel · sort: volume\n\n### matchingTerms (8)\n| keyword | volume | competition | overall | estimatedMonthlySearch | searchDemandGrowthPct |\n|---|---|---|---|---|---|\n| budget travel tips | 61 | 36 | 62 | 13073 | -38.2% |\n| hidden travel fees that can double your vacation budget in united states | 61 | 32 | 64 | 12071 | null |\n| budget travel hacks for college students | 61 | 34 | 63 | 11763 | null |\n| travel budget | 59 | 28 | 64 | 9487 | -3.4% |\n| budget travel city guides | 59 | 15 | 69 | 8297 | null |\n| budget travel & backpacking | 56 | 16 | 67 | 6075 | null |\n| istanbul travel in budget | 56 | 25 | 64 | 5426 | null |\n| baguio city budget travel guide | 56 | 21 | 65 | 5359 | null |\n\nNote: Null or missing values are unknown, not 0: report those rows separately and keep real zeros and negative changes."
+    }
+  },
+  "answer": {
+    "ttftMs": 695,
+    "chunks": [
+      {
+        "t": 695,
+        "text": "The data"
+      },
+      {
+        "t": 731,
+        "text": " provided only returned 8 keywords rather than 40. Your best opportunity is \""
+      },
+      {
+        "t": 806,
+        "text": "budget travel city guides,\" which offers the highest overall score (69) and the lowest competition (15) among the results"
+      },
+      {
+        "t": 899,
+        "text": ".\n\n- Prioritize \"budget travel city guides\" and \"budget travel & backpacking\" to capture high-intent viewers"
+      },
+      {
+        "t": 950,
+        "text": " with minimal competition.\n- Create a specific \"hidden travel fees\" video; despite the 12,071 monthly"
+      },
+      {
+        "t": 1028,
+        "text": " searches, it has a low competition score of 32, making it a strong niche play.\n- Avoid \"budget travel tips"
+      },
+      {
+        "t": 1068,
+        "text": "\" for now; its search demand has dropped by 38.2%, suggesting waning interest.\n- To get"
+      },
+      {
+        "t": 1216,
+        "text": " the remaining 32 long-tail variations, try re-running the tool with more specific geographic or demographic modifiers (e.g., \""
+      },
+      {
+        "t": 1249,
+        "text": "budget travel Europe,\" \"budget travel solo\")."
+      }
+    ]
+  },
+  "costs": {
+    "credits": 5,
+    "llmUsd": 0.00079325
+  }
+}

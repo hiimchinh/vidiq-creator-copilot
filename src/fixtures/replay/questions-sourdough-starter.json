@@ -1,0 +1,74 @@
+{
+  "id": "questions-sourdough-starter",
+  "label": "Questions people ask: sourdough starter",
+  "prompt": "What questions do people ask about sourdough starter?",
+  "model": "google/gemini-3.1-flash-lite",
+  "recordedAt": "2026-11-04T03:07:56.527Z",
+  "plan": {
+    "calls": [
+      {
+        "id": "call_213202",
+        "tool": "vidiq_keyword_research",
+        "args": {
+          "keyword": "sourdough starter",
+          "mode": "questions",
+          "userGoal": "Identify common questions people have about sourdough starter to create helpful content."
+        },
+        "parse": "ok"
+      }
+    ],
+    "rejected": [],
+    "note": ""
+  },
+  "results": {
+    "vidiq_keyword_research:{\"keyword\":\"sourdough starter\",\"mode\":\"questions\"}": {
+      "ok": true,
+      "text": "## Keyword research — mode: questions · query: sourdough starter · sort: volume\n\n### questions (7)\n| question | volume | competition | overall | estimatedMonthlySearch | searchDemandGrowthPct |\n|---|---|---|---|---|---|\n| how to make sourdough starter | 60 | 50 | 56 | 10054 | -31.5% |\n| can you make sourdough starter with regular flour? | 56 | 24 | 64 | 6092 | null |\n| how to make homemade sourdough starter | 56 | 40 | 57 | 5263 | null |\n| how to make sourdough starter at home | 55 | 34 | 59 | 4748 | null |\n| how to feed sourdough starter from refrigerator | 55 | 20 | 65 | 4638 | null |\n| how to use a sourdough starter | 54 | 32 | 60 | 4469 | null |\n| how to make my sourdough starter active | 54 | 28 | 61 | 4419 | null |\n\nNote: Searched the default language 'en' because `language` was omitted and no channel language was available (no connected YouTube channel, or none with a known language). Pass `language` to search a different language.\nNote: Null or missing values are unknown, not 0: report those rows separately and keep real zeros and negative changes."
+    }
+  },
+  "answer": {
+    "ttftMs": 781,
+    "chunks": [
+      {
+        "t": 781,
+        "text": "The most"
+      },
+      {
+        "t": 844,
+        "text": " valuable opportunity is \"how to feed sourdough starter from the refrigerator,\" which has a"
+      },
+      {
+        "t": 948,
+        "text": " high overall score of 65 and low competition (20), making it your best bet for ranking quickly.\n\n-"
+      },
+      {
+        "t": 1023,
+        "text": " Create a \"Fridge Maintenance\" tutorial focusing on the specific steps to revive and feed a cold starter, as this addresses a high"
+      },
+      {
+        "t": 1099,
+        "text": "-intent, low-competition pain point.\n- Address the \"regular flour\" query (6,092"
+      },
+      {
+        "t": 1191,
+        "text": " monthly searches) in your intro to capture beginners who are intimidated by specialty flours.\n- Film a \"Troubleshooting\" video"
+      },
+      {
+        "t": 1269,
+        "text": " specifically on making a starter active (61 overall score), as this is a high-volume hurdle for your audience.\n- Avoid broad"
+      },
+      {
+        "t": 1391,
+        "text": " \"how to make\" videos for now, as that topic is more competitive and currently seeing a 31.5% decline in search demand"
+      },
+      {
+        "t": 1424,
+        "text": "."
+      }
+    ]
+  },
+  "costs": {
+    "credits": 5,
+    "llmUsd": 0.00076975
+  }
+}

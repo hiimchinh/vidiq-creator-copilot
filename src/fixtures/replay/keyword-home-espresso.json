@@ -1,0 +1,70 @@
+{
+  "id": "keyword-home-espresso",
+  "label": "Keyword research: home espresso",
+  "prompt": "Keyword research for 'home espresso'. What should a small channel target?",
+  "model": "google/gemini-3.1-flash-lite",
+  "recordedAt": "2026-11-04T03:06:41.704Z",
+  "plan": {
+    "calls": [
+      {
+        "id": "call_290258",
+        "tool": "vidiq_keyword_research",
+        "args": {
+          "keyword": "home espresso",
+          "mode": "research",
+          "userGoal": "Help a small channel find targetable keywords for home espresso content."
+        },
+        "parse": "ok"
+      }
+    ],
+    "rejected": [],
+    "note": ""
+  },
+  "results": {
+    "vidiq_keyword_research:{\"keyword\":\"home espresso\",\"mode\":\"research\"}": {
+      "ok": true,
+      "text": "## Keyword research — mode: research\n\n### seedKeyword (1)\n| keyword | volume | competition | overall | estimatedMonthlySearch | searchDemandGrowthPct | topMarkets (top 3) |\n|---|---|---|---|---|---|---|\n| home espresso | 55 | 29 | 61 | 4836 | null | none |\n\n### relatedKeywords (16)\n| keyword | volume | competition | overall | estimatedMonthlySearch | searchDemandGrowthPct | topMarkets (top 3) |\n|---|---|---|---|---|---|---|\n| espresso at home | 55 | 30 | 61 | 4501 | null | none |\n| espresso machine | 66 | 62 | 55 | 24767 | -37.8% | none |\n| espresso | 85 | 74 | 61 | 460746 | -18.6% | IN 23%, VN 8%, US 8% |\n| coffee | 84 | 71 | 62 | 443776 | +5.8% | US 13%, IN 13%, BR 10% |\n| how to make espresso | 53 | 30 | 60 | 3372 | null | none |\n| making espresso | 54 | 45 | 54 | 4017 | null | none |\n| home barista | 54 | 26 | 62 | 4341 | null | none |\n| james hoffman | 66 | 59 | 56 | 26408 | +64.8% | none |\n| james hoffmann | 71 | 55 | 61 | 53335 | +12.1% | GB 29%, US 12%, PL 6% |\n| best espresso machine | 62 | 60 | 53 | 13408 | -37.4% | none |\n| eureka mignon xl | 59 | 24 | 66 | 8410 | null | none |\n| espresso machine tutorial | 59 | 34 | 62 | 9021 | null | none |\n| latte | 65 | 58 | 56 | 20982 | -27.4% | none |\n| espresso recipes | 55 | 29 | 61 | 4575 | null | none |\n| acaia lunar | 55 | 29 | 62 | 5126 | null | none |\n| wdt tool | 55 | 33 | 60 | 4875 | null | none |\n\nNote: Null or missing values are unknown, not 0: report those rows separately and keep real zeros and negative changes.\nNote: topMarkets shows at most the top three countries by search share: an absent country is unknown, not 0%."
+    }
+  },
+  "answer": {
+    "ttftMs": 746,
+    "chunks": [
+      {
+        "t": 746,
+        "text": "\""
+      },
+      {
+        "t": 790,
+        "text": "Home espresso\" is too broad for a small channel; pivot to \"home barista\" or"
+      },
+      {
+        "t": 872,
+        "text": " specific gear tutorials to capture lower-competition traffic. While \"home espresso\" has a competition score of 29, it"
+      },
+      {
+        "t": 983,
+        "text": " lacks the specificity needed to rank against established creators.\n\n- Target \"home barista\" (competition 26) or \"espresso"
+      },
+      {
+        "t": 1057,
+        "text": " machine tutorial\" (competition 34) to reach viewers actively seeking educational content rather than just browsing machines.\n- Create"
+      },
+      {
+        "t": 1155,
+        "text": " content around the \"eureka mignon xl\" (competition 24) or \"wdt tool\" (competition 33); these niche"
+      },
+      {
+        "t": 1297,
+        "text": " keywords have higher overall scores and lower competition than broad terms like \"espresso machine.\"\n- Avoid high-competition terms like \"espresso\" ("
+      },
+      {
+        "t": 1354,
+        "text": "74) or \"coffee\" (71), which are dominated by massive channels and have negative search growth trends."
+      }
+    ]
+  },
+  "costs": {
+    "credits": 5,
+    "llmUsd": 0.0008569999999999999
+  }
+}

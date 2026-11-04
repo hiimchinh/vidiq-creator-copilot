@@ -1,0 +1,109 @@
+{
+  "id": "title-espresso",
+  "label": "Score a title + stronger variations",
+  "prompt": "Score this title and suggest stronger variations: 'I Tried 5 Cheap Espresso Machines So You Don't Have To'",
+  "model": "google/gemini-3.1-flash-lite",
+  "recordedAt": "2026-11-04T03:06:48.872Z",
+  "plan": {
+    "calls": [
+      {
+        "id": "call_249407",
+        "tool": "vidiq_score_title",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To",
+          "type": "long",
+          "userGoal": "Help the creator improve the click-through potential of their espresso machine review video."
+        },
+        "parse": "ok"
+      },
+      {
+        "id": "call_249410",
+        "tool": "vidiq_generate_titles",
+        "args": {
+          "title": "I Tried 5 Cheap Espresso Machines So You Don't Have To",
+          "description": "A review video testing 5 different budget-friendly espresso machines to see if they are worth buying.",
+          "type": "long"
+        },
+        "parse": "ok"
+      }
+    ],
+    "rejected": [],
+    "note": ""
+  },
+  "results": {
+    "vidiq_score_title:{\"title\":\"I Tried 5 Cheap Espresso Machines So You Don't Have To\",\"type\":\"long\"}": {
+      "ok": true,
+      "text": "{\"score\":99,\"_credits\":{\"used\":5}}",
+      "structured": {
+        "score": 99,
+        "_credits": {
+          "used": 5
+        }
+      }
+    },
+    "vidiq_generate_titles:{\"description\":\"A review video testing 5 different budget-friendly espresso machines to see if they are worth buying.\",\"title\":\"I Tried 5 Cheap Espresso Machines So You Don't Have To\",\"type\":\"long\"}": {
+      "ok": true,
+      "text": "{\"titles\":[{\"title\":\"Testing 5 Cheap Espresso Machines To Find The Best One\",\"score\":97},{\"title\":\"5 Cheap Espresso Machines Tested: Which Is Actually Good?\",\"score\":96},{\"title\":\"I Tested The Cheapest Espresso Machines On Amazon\",\"score\":96}],\"_credits\":{\"used\":5}}",
+      "structured": {
+        "titles": [
+          {
+            "title": "Testing 5 Cheap Espresso Machines To Find The Best One",
+            "score": 97
+          },
+          {
+            "title": "5 Cheap Espresso Machines Tested: Which Is Actually Good?",
+            "score": 96
+          },
+          {
+            "title": "I Tested The Cheapest Espresso Machines On Amazon",
+            "score": 96
+          }
+        ],
+        "_credits": {
+          "used": 5
+        }
+      }
+    }
+  },
+  "answer": {
+    "ttftMs": 785,
+    "chunks": [
+      {
+        "t": 785,
+        "text": "Your current"
+      },
+      {
+        "t": 897,
+        "text": " title is excellent, scoring a 99/100. It performs"
+      },
+      {
+        "t": 993,
+        "text": " well because it promises a clear benefit (\"so you don't have to\") while setting a specific expectation. Since the"
+      },
+      {
+        "t": 1113,
+        "text": " score is already near-perfect, focus on high-intent keywords rather than changing the structure.\n\n- Use \"I Tested The Cheapest Espresso Machines"
+      },
+      {
+        "t": 1238,
+        "text": " On Amazon\" to leverage the high search volume of \"Amazon,\" which adds immediate credibility to your budget claim.\n- If"
+      },
+      {
+        "t": 1351,
+        "text": " your thumbnail shows a clear \"winner,\" try: \"5 Cheap Espresso Machines Tested: Which Is Actually Good?\" to pique"
+      },
+      {
+        "t": 1457,
+        "text": " curiosity about the results.\n- Keep the \"So You Don't Have To\" framing in your video description or pinned"
+      },
+      {
+        "t": 1510,
+        "text": " comment to maintain that high-converting psychological hook without cluttering the title."
+      }
+    ]
+  },
+  "costs": {
+    "credits": 10,
+    "llmUsd": 0.00082125
+  }
+}

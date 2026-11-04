@@ -1,0 +1,70 @@
+{
+  "id": "questions-sourdough",
+  "label": "Questions people ask: sourdough",
+  "prompt": "What questions do people search about sourdough for beginners?",
+  "model": "google/gemini-3.1-flash-lite",
+  "recordedAt": "2026-11-04T03:06:54.771Z",
+  "plan": {
+    "calls": [
+      {
+        "id": "call_418485",
+        "tool": "vidiq_keyword_research",
+        "args": {
+          "keyword": "sourdough for beginners",
+          "mode": "questions",
+          "userGoal": "Identify common questions beginners have about sourdough to create helpful content."
+        },
+        "parse": "ok"
+      }
+    ],
+    "rejected": [],
+    "note": ""
+  },
+  "results": {
+    "vidiq_keyword_research:{\"keyword\":\"sourdough for beginners\",\"mode\":\"questions\"}": {
+      "ok": true,
+      "text": "## Keyword research — mode: questions · query: sourdough for beginners · sort: volume\n\nNo keyword data was found.\n\nNote: Searched the default language 'en' because `language` was omitted and no channel language was available (no connected YouTube channel, or none with a known language). Pass `language` to search a different language."
+    }
+  },
+  "answer": {
+    "ttftMs": 856,
+    "chunks": [
+      {
+        "t": 856,
+        "text": "The keyword"
+      },
+      {
+        "t": 885,
+        "text": " research tool failed to return data for \"sourdough for beginners.\" This is likely because"
+      },
+      {
+        "t": 1096,
+        "text": " the search volume for that specific phrase as a question is too low, or the language settings need adjustment.\n\n- Try searching"
+      },
+      {
+        "t": 1096,
+        "text": " broader terms like \"sourdough bread\" or \"sourdough starter\" and filter by the \"Questions\" tab"
+      },
+      {
+        "t": 1096,
+        "text": " to see if related queries appear.\n- If you are targeting a specific region, pass the `language` parameter (e"
+      },
+      {
+        "t": 1375,
+        "text": ".g., `language: 'en'`) in your next request to ensure the tool pulls from the correct database.\n- Check the \""
+      },
+      {
+        "t": 1375,
+        "text": "Related Keywords\" tab instead of \"Questions\" to find high-volume topics like \"how to make sourdough starter\" or \"s"
+      },
+      {
+        "t": 1375,
+        "text": "ourdough bread recipe,\" which often represent the intent behind beginner searches."
+      }
+    ]
+  },
+  "costs": {
+    "credits": 5,
+    "llmUsd": 0.0006845
+  }
+}

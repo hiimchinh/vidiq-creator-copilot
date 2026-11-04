@@ -17,12 +17,22 @@ export const SCENARIOS = [
   },
   {
     id: "questions-sourdough",
-    label: "Questions people ask: sourdough",
+    label: "Edge case: no data for a phrase",
     prompt: "What questions do people search about sourdough for beginners?",
   },
   {
     id: "channel-veritasium",
     label: "Channel growth: @veritasium",
     prompt: "How much has @veritasium grown in the last 30 days?",
+  },
+  {
+    id: "questions-sourdough-starter",
+    label: "Questions people ask: sourdough starter",
+    prompt: "What questions do people ask about sourdough starter?",
+  },
+  {
+    id: "longtail-budget-travel",
+    label: "Long-tail keywords: budget travel (40 rows)",
+    prompt: "Give me 40 long-tail keyword variations for 'budget travel' so I can pick low-competition ones.",
   },
 ] as const;

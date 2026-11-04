@@ -1,0 +1,276 @@
+{
+  "id": "channel-veritasium",
+  "label": "Channel growth: @veritasium",
+  "prompt": "How much has @veritasium grown in the last 30 days?",
+  "model": "google/gemini-3.1-flash-lite",
+  "recordedAt": "2026-11-04T03:06:57.125Z",
+  "plan": {
+    "calls": [
+      {
+        "id": "call_230051",
+        "tool": "vidiq_channel_stats",
+        "args": {
+          "channelId": "@veritasium"
+        },
+        "parse": "ok"
+      }
+    ],
+    "rejected": [],
+    "note": ""
+  },
+  "results": {
+    "vidiq_channel_stats:{\"channelId\":\"@veritasium\"}": {
+      "ok": true,
+      "text": "{\"channelId\":\"UCHnyfMqiRRG1u-2MsSQLbXA\",\"title\":\"Veritasium\",\"thumbnail\":\"https://yt3.ggpht.com/7vCbvtCqtjQ3YLgsJt7Y952MQV1sBvhllSCSxHP8_sVZdcPCBrITfhkN2RdyCuwPnsByq-1GoA=s240-c-k-c0x00ffffff-no-rj\",\"country\":\"US\",\"defaultLanguage\":null,\"publishedAt\":\"2010-07-21T07:18:02Z\",\"topics\":[\"Knowledge\"],\"currentStats\":{\"subscribers\":21400000,\"views\":4715797218,\"videos\":546},\"growth\":{\"subscribersGained\":100000,\"viewsGained\":83314692,\"videosPublished\":8},\"dailyStats\":[{\"date\":\"2026-10-05\",\"subscribers\":21300000,\"views\":4635682200,\"videos\":538},{\"date\":\"2026-10-06\",\"subscribers\":21300000,\"views\":4638140200,\"videos\":538},{\"date\":\"2026-10-07\",\"subscribers\":21300000,\"views\":4641035427,\"videos\":538},{\"date\":\"2026-10-08\",\"subscribers\":21300000,\"views\":4643926896,\"videos\":538},{\"date\":\"2026-10-09\",\"subscribers\":21300000,\"views\":4645695048,\"videos\":539},{\"date\":\"2026-10-10\",\"subscribers\":21300000,\"views\":4648985367,\"videos\":539},{\"date\":\"2026-10-11\",\"subscribers\":21300000,\"views\":4652811692,\"videos\":539},{\"date\":\"2026-10-12\",\"subscribers\":21400000,\"views\":4655204708,\"videos\":540},{\"date\":\"2026-10-13\",\"subscribers\":21400000,\"views\":4659710271,\"videos\":540},{\"date\":\"2026-10-14\",\"subscribers\":21400000,\"views\":4661261371,\"videos\":540},{\"date\":\"2026-10-15\",\"subscribers\":21400000,\"views\":4666228082,\"videos\":541},{\"date\":\"2026-10-16\",\"subscribers\":21400000,\"views\":4670272389,\"videos\":541},{\"date\":\"2026-10-17\",\"subscribers\":21400000,\"views\":4673898521,\"videos\":541},{\"date\":\"2026-10-18\",\"subscribers\":21400000,\"views\":4676834447,\"videos\":541},{\"date\":\"2026-10-19\",\"subscribers\":21400000,\"views\":4679475306,\"videos\":541},{\"date\":\"2026-10-20\",\"subscribers\":21400000,\"views\":4680895501,\"videos\":541},{\"date\":\"2026-10-21\",\"subscribers\":21400000,\"views\":4682429691,\"videos\":541},{\"date\":\"2026-10-22\",\"subscribers\":21400000,\"views\":4686207571,\"videos\":542},{\"date\":\"2026-10-23\",\"subscribers\":21400000,\"views\":4688140200,\"videos\":543},{\"date\":\"2026-10-24\",\"subscribers\":21400000,\"views\":4692620952,\"videos\":543},{\"date\":\"2026-10-25\",\"subscribers\":21400000,\"views\":4695846306,\"videos\":543},{\"date\":\"2026-10-26\",\"subscribers\":21400000,\"views\":4698625403,\"videos\":543},{\"date\":\"2026-10-27\",\"subscribers\":21400000,\"views\":4700642149,\"videos\":544},{\"date\":\"2026-10-28\",\"subscribers\":21400000,\"views\":4703301893,\"videos\":544},{\"date\":\"2026-10-29\",\"subscribers\":21400000,\"views\":4705128821,\"videos\":544},{\"date\":\"2026-10-30\",\"subscribers\":21400000,\"views\":4706983241,\"videos\":545},{\"date\":\"2026-10-31\",\"subscribers\":21400000,\"views\":4710068703,\"videos\":545},{\"date\":\"2026-11-01\",\"subscribers\":21400000,\"views\":4712267937,\"videos\":545},{\"date\":\"2026-11-02\",\"subscribers\":21400000,\"views\":4713978904,\"videos\":546},{\"date\":\"2026-11-03\",\"subscribers\":21400000,\"views\":4715797218,\"videos\":546},{\"date\":\"2026-11-04\",\"subscribers\":21400000,\"views\":4715797218,\"videos\":546}],\"_credits\":{\"used\":5}}",
+      "structured": {
+        "channelId": "UCHnyfMqiRRG1u-2MsSQLbXA",
+        "title": "Veritasium",
+        "thumbnail": "https://yt3.ggpht.com/7vCbvtCqtjQ3YLgsJt7Y952MQV1sBvhllSCSxHP8_sVZdcPCBrITfhkN2RdyCuwPnsByq-1GoA=s240-c-k-c0x00ffffff-no-rj",
+        "country": "US",
+        "defaultLanguage": null,
+        "publishedAt": "2010-07-21T07:18:02Z",
+        "topics": [
+          "Knowledge"
+        ],
+        "currentStats": {
+          "subscribers": 21400000,
+          "views": 4715797218,
+          "videos": 546
+        },
+        "growth": {
+          "subscribersGained": 100000,
+          "viewsGained": 83314692,
+          "videosPublished": 8
+        },
+        "dailyStats": [
+          {
+            "date": "2026-10-05",
+            "subscribers": 21300000,
+            "views": 4635682200,
+            "videos": 538
+          },
+          {
+            "date": "2026-10-06",
+            "subscribers": 21300000,
+            "views": 4638140200,
+            "videos": 538
+          },
+          {
+            "date": "2026-10-07",
+            "subscribers": 21300000,
+            "views": 4641035427,
+            "videos": 538
+          },
+          {
+            "date": "2026-10-08",
+            "subscribers": 21300000,
+            "views": 4643926896,
+            "videos": 538
+          },
+          {
+            "date": "2026-10-09",
+            "subscribers": 21300000,
+            "views": 4645695048,
+            "videos": 539
+          },
+          {
+            "date": "2026-10-10",
+            "subscribers": 21300000,
+            "views": 4648985367,
+            "videos": 539
+          },
+          {
+            "date": "2026-10-11",
+            "subscribers": 21300000,
+            "views": 4652811692,
+            "videos": 539
+          },
+          {
+            "date": "2026-10-12",
+            "subscribers": 21400000,
+            "views": 4655204708,
+            "videos": 540
+          },
+          {
+            "date": "2026-10-13",
+            "subscribers": 21400000,
+            "views": 4659710271,
+            "videos": 540
+          },
+          {
+            "date": "2026-10-14",
+            "subscribers": 21400000,
+            "views": 4661261371,
+            "videos": 540
+          },
+          {
+            "date": "2026-10-15",
+            "subscribers": 21400000,
+            "views": 4666228082,
+            "videos": 541
+          },
+          {
+            "date": "2026-10-16",
+            "subscribers": 21400000,
+            "views": 4670272389,
+            "videos": 541
+          },
+          {
+            "date": "2026-10-17",
+            "subscribers": 21400000,
+            "views": 4673898521,
+            "videos": 541
+          },
+          {
+            "date": "2026-10-18",
+            "subscribers": 21400000,
+            "views": 4676834447,
+            "videos": 541
+          },
+          {
+            "date": "2026-10-19",
+            "subscribers": 21400000,
+            "views": 4679475306,
+            "videos": 541
+          },
+          {
+            "date": "2026-10-20",
+            "subscribers": 21400000,
+            "views": 4680895501,
+            "videos": 541
+          },
+          {
+            "date": "2026-10-21",
+            "subscribers": 21400000,
+            "views": 4682429691,
+            "videos": 541
+          },
+          {
+            "date": "2026-10-22",
+            "subscribers": 21400000,
+            "views": 4686207571,
+            "videos": 542
+          },
+          {
+            "date": "2026-10-23",
+            "subscribers": 21400000,
+            "views": 4688140200,
+            "videos": 543
+          },
+          {
+            "date": "2026-10-24",
+            "subscribers": 21400000,
+            "views": 4692620952,
+            "videos": 543
+          },
+          {
+            "date": "2026-10-25",
+            "subscribers": 21400000,
+            "views": 4695846306,
+            "videos": 543
+          },
+          {
+            "date": "2026-10-26",
+            "subscribers": 21400000,
+            "views": 4698625403,
+            "videos": 543
+          },
+          {
+            "date": "2026-10-27",
+            "subscribers": 21400000,
+            "views": 4700642149,
+            "videos": 544
+          },
+          {
+            "date": "2026-10-28",
+            "subscribers": 21400000,
+            "views": 4703301893,
+            "videos": 544
+          },
+          {
+            "date": "2026-10-29",
+            "subscribers": 21400000,
+            "views": 4705128821,
+            "videos": 544
+          },
+          {
+            "date": "2026-10-30",
+            "subscribers": 21400000,
+            "views": 4706983241,
+            "videos": 545
+          },
+          {
+            "date": "2026-10-31",
+            "subscribers": 21400000,
+            "views": 4710068703,
+            "videos": 545
+          },
+          {
+            "date": "2026-11-01",
+            "subscribers": 21400000,
+            "views": 4712267937,
+            "videos": 545
+          },
+          {
+            "date": "2026-11-02",
+            "subscribers": 21400000,
+            "views": 4713978904,
+            "videos": 546
+          },
+          {
+            "date": "2026-11-03",
+            "subscribers": 21400000,
+            "views": 4715797218,
+            "videos": 546
+          },
+          {
+            "date": "2026-11-04",
+            "subscribers": 21400000,
+            "views": 4715797218,
+            "videos": 546
+          }
+        ],
+        "_credits": {
+          "used": 5
+        }
+      }
+    }
+  },
+  "answer": {
+    "ttftMs": 857,
+    "chunks": [
+      {
+        "t": 857,
+        "text": "Veritas"
+      },
+      {
+        "t": 902,
+        "text": "ium has seen strong momentum, gaining 100,000 subscribers and"
+      },
+      {
+        "t": 1133,
+        "text": " 83.3 million views over the last 30 days while publishing 8 new videos.\n\n- Analyze the performance"
+      },
+      {
+        "t": 1134,
+        "text": " of the 8 videos published this period; identify which topics drove the highest view velocity to inform your next content calendar.\n- With"
+      },
+      {
+        "t": 1134,
+        "text": " 83.3M views generated from only 8 uploads, focus on high-production-value, evergreen storytelling that"
+      },
+      {
+        "t": 1365,
+        "text": " encourages long-term search and browse traffic.\n- Since subscriber growth is steady but slower than view velocity, experiment with pinned"
+      },
+      {
+        "t": 1370,
+        "text": " comments or end-screen CTAs that specifically target non-subscribed viewers who are already engaging with your content."
+      }
+    ]
+  },
+  "costs": {
+    "credits": 5,
+    "llmUsd": 0.00099825
+  }
+}
