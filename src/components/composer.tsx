@@ -1,9 +1,16 @@
 "use client";
 
 import { type FormEvent, useState } from "react";
+import { ModeSwitch } from "./mode-switch";
 
-/** The chat input: a rounded card pinned under the conversation, with an icon send button. */
-export function Composer({ onSubmit, busy }: { onSubmit: (prompt: string) => void; busy: boolean }) {
+interface ComposerProps {
+  onSubmit: (prompt: string) => void;
+  busy: boolean;
+  liveEnabled: boolean;
+}
+
+/** The chat input: a rounded card pinned under the conversation; the data mode menu and an icon send button on its bottom row. */
+export function Composer({ onSubmit, busy, liveEnabled }: ComposerProps) {
   const [value, setValue] = useState("");
   function submit(event: FormEvent) {
     event.preventDefault();
@@ -16,7 +23,7 @@ export function Composer({ onSubmit, busy }: { onSubmit: (prompt: string) => voi
     <form
       onSubmit={submit}
       data-testid="composer"
-      className="flex flex-col gap-1 rounded-3xl border border-line bg-surface px-5 pb-3 pt-4 focus-within:border-muted/50 sm:gap-3"
+      className="flex flex-col gap-1 rounded-3xl border border-line bg-surface px-5 pb-4 pt-5 focus-within:border-muted/50 sm:gap-3"
     >
       <label htmlFor="prompt" className="sr-only">Ask the copilot</label>
       <textarea
@@ -31,7 +38,8 @@ export function Composer({ onSubmit, busy }: { onSubmit: (prompt: string) => voi
         placeholder="How can I help you grow?"
         className="max-h-40 min-h-7 resize-none bg-transparent text-[15px] leading-7 outline-none placeholder:text-muted focus-visible:outline-none"
       />
-      <div className="flex items-center justify-end">
+      <div className="flex items-center justify-end gap-2">
+        <ModeSwitch liveEnabled={liveEnabled} />
         <button
           type="submit"
           aria-label="Ask"

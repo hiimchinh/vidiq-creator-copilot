@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useMemo } from "react";
+import { Fragment, type ReactNode, useMemo } from "react";
 import { type AnswerBlock, buildAnswerModel, type InlinePart } from "@/lib/claims/answer-model";
 import type { Source } from "@/lib/claims/provenance";
 import { ClaimChip } from "./claim-chip";
@@ -51,12 +51,28 @@ function Block({ block }: { block: AnswerBlock }) {
   }
 }
 
+interface AnswerTextProps {
+  text: string;
+  streaming: boolean;
+  sources: Source[];
+  /** Shown right under the first table (the scores it is about), or after the last block when there is none. */
+  afterTable?: ReactNode;
+}
+
 /** Safe rendering of streamed model text: no innerHTML, no raw markdown, every number bound to its source. */
-export function AnswerText({ text, streaming, sources }: { text: string; streaming: boolean; sources: Source[] }) {
+export function AnswerText({ text, streaming, sources, afterTable }: AnswerTextProps) {
   const blocks = useMemo(() => buildAnswerModel(text, sources), [text, sources]);
+  const firstTable = blocks.findIndex((b) => b.kind === "table");
+  const slotAt = firstTable === -1 ? blocks.length - 1 : firstTable;
   return (
     <div className={`flex flex-col gap-4 text-[15px] leading-[26px] ${streaming ? "caret" : ""}`} aria-live="polite" aria-busy={streaming} data-testid="answer">
-      {blocks.map((block, i) => <Block key={i} block={block} />)}
+      {blocks.map((block, i) => (
+        <Fragment key={i}>
+          <Block block={block} />
+          {i === slotAt && afterTable}
+        </Fragment>
+      ))}
+      {blocks.length === 0 && afterTable}
     </div>
   );
 }

@@ -15,7 +15,7 @@ interface CopilotProps {
   liveEnabled: boolean;
   /** The recorded turn shown on landing, built on the server. */
   featured?: Turn;
-  /** Small print under the composer. */
+  /** Small print under the composer (narrow screens; the sidebar carries it from 1024 px). */
   children?: ReactNode;
 }
 
@@ -59,10 +59,14 @@ export function Copilot({ scenarios, liveEnabled, featured, children }: CopilotP
         )}
         <div ref={endRef} />
       </div>
-      <div className="sticky bottom-0 -mx-4 flex flex-col gap-2.5 bg-bg px-4 pb-3 pt-1 before:pointer-events-none before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-t before:from-bg before:to-transparent">
-        {mode === "replay" && <ScenarioChips scenarios={scenarios} onPick={(p) => void submitPrompt(p)} disabled={busy} />}
+      <div className="sticky bottom-0 -mx-4 flex flex-col gap-2.5 bg-bg px-4 pb-3 pt-1 lg:pb-6 before:pointer-events-none before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-t before:from-bg before:to-transparent">
+        {mode === "replay" && (
+          <div className="lg:hidden">
+            <ScenarioChips scenarios={scenarios} onPick={(p) => void submitPrompt(p)} disabled={busy} />
+          </div>
+        )}
         {mode === "live" && !hasKey && <p className="text-xs text-warn">Add your vidIQ API key above to use Live mode.</p>}
-        <Composer onSubmit={(p) => void submitPrompt(p)} busy={blocked} />
+        <Composer onSubmit={(p) => void submitPrompt(p)} busy={blocked} liveEnabled={liveEnabled} />
         {children}
       </div>
     </div>
