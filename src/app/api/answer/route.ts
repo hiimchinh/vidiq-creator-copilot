@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { type AnswerEvent, AnswerRequestSchema } from "@/lib/copilot/api-types";
+import { refuseLiveMode } from "@/lib/demo/live-mode";
 import { answerMessages } from "@/lib/llm/answer";
 import { llmConfig, spendGuard } from "@/lib/llm/llm-config";
 import { LlmError, streamText } from "@/lib/llm/openrouter";
@@ -29,6 +30,8 @@ export async function POST(request: Request) {
   const parsed = AnswerRequestSchema.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "invalid request" }, { status: 400 });
   const { mode, prompt, scenarioId, evidence, skipped } = parsed.data;
+  const refused = refuseLiveMode(mode);
+  if (refused) return refused;
   const onError = (error: unknown): AnswerEvent => ({
     type: "error",
     message: error instanceof LlmError ? error.message : "The answer stream failed. The data cards above are still valid.",

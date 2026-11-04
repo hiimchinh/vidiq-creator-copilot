@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { cacheKey } from "@/lib/cache/cache-key";
 import { type ToolResponse, ToolRequestSchema, VIDIQ_KEY_HEADER, VIDIQ_MCP_URL } from "@/lib/copilot/api-types";
+import { refuseLiveMode } from "@/lib/demo/live-mode";
 import { isCopilotTool } from "@/lib/llm/copilot-tools";
 import { createMcpClient } from "@/lib/mcp/mcp-client";
 import { mcpError } from "@/lib/mcp/mcp-errors";
@@ -17,6 +18,8 @@ export async function POST(request: Request) {
   const parsed = ToolRequestSchema.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "invalid request" }, { status: 400 });
   const { mode, tool, args } = parsed.data;
+  const refused = refuseLiveMode(mode);
+  if (refused) return refused;
 
   // Read-only allowlist, enforced on the server whatever the client or the model asks for.
   if (!isCopilotTool(tool)) return respond(tool, args, { ok: false, error: mcpError("not_allowed", tool) }, 403);

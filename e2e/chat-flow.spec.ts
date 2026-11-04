@@ -65,6 +65,7 @@ test.describe("chat flow in Replay mode", () => {
   });
 
   test("Live mode needs the visitor's own key before it can ask", async ({ page }) => {
+    test.skip(process.env.LIVE_MODE === "off", "Live mode is disabled on the public demo build");
     await page.goto("/");
     await page.getByRole("radio", { name: "Live" }).click();
     await expect(page.getByText("Add your vidIQ API key above to use Live mode.")).toBeVisible();

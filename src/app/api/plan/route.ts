@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { type PlanResponse, PlanRequestSchema } from "@/lib/copilot/api-types";
+import { refuseLiveMode } from "@/lib/demo/live-mode";
 import { llmConfig, spendGuard } from "@/lib/llm/llm-config";
 import { LlmError, complete } from "@/lib/llm/openrouter";
 import { planToolCalls } from "@/lib/llm/planner";
@@ -12,6 +13,8 @@ export async function POST(request: Request) {
   const parsed = PlanRequestSchema.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "invalid request" }, { status: 400 });
   const { mode, prompt } = parsed.data;
+  const refused = refuseLiveMode(mode);
+  if (refused) return refused;
 
   if (mode === "replay") {
     const scenario = matchScenario(prompt);

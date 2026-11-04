@@ -11,7 +11,7 @@ import { ScenarioChips } from "./scenario-chips";
 import { SettingsPanel } from "./settings-panel";
 import { TurnView } from "./turn-view";
 
-export function Copilot({ scenarios }: { scenarios: ScenarioSummary[] }) {
+export function Copilot({ scenarios, liveEnabled }: { scenarios: ScenarioSummary[]; liveEnabled: boolean }) {
   const turns = useCopilotStore((s) => s.turns);
   const mode = useCopilotStore((s) => s.mode);
   const hasKey = useKeyStore((s) => s.vidiqKey.length > 0);
@@ -19,12 +19,16 @@ export function Copilot({ scenarios }: { scenarios: ScenarioSummary[] }) {
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    void useCopilotStore.persist.rehydrate();
+    void Promise.resolve(useCopilotStore.persist.rehydrate()).then(() => {
+      // A visitor who picked Live on an earlier visit lands in Replay when the server has Live off.
+      const { mode, setMode } = useCopilotStore.getState();
+      if (!liveEnabled && mode === "live") setMode("replay");
+    });
     void useKeyStore.persist.rehydrate();
     const onError = (e: ErrorEvent) => track("client_error", { message: e.message.slice(0, 200) });
     window.addEventListener("error", onError);
     return () => window.removeEventListener("error", onError);
-  }, []);
+  }, [liveEnabled]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ block: "end", behavior: "smooth" });

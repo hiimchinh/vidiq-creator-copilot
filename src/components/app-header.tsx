@@ -2,7 +2,7 @@ import { CreditMeter } from "./credit-meter";
 import { ModeSwitch } from "./mode-switch";
 import { ThemeToggle } from "./theme-toggle";
 
-export function AppHeader() {
+export function AppHeader({ liveEnabled }: { liveEnabled: boolean }) {
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-bg/90 backdrop-blur">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-3 gap-y-2 px-4 py-2.5">
@@ -17,7 +17,7 @@ export function AppHeader() {
         </div>
         <div className="ml-auto flex items-center gap-2">
           <CreditMeter />
-          <ModeSwitch />
+          <ModeSwitch liveEnabled={liveEnabled} />
           <ThemeToggle />
         </div>
       </div>
