@@ -23,20 +23,20 @@ export function CostCard({ step, onRun, onSkip }: Props) {
     <div
       role="group"
       aria-label={`Confirm ${toolLabel(step.tool)}`}
-      className="flex flex-col gap-2 rounded-md border border-credit/40 bg-credit-soft p-3"
+      className="flex flex-col gap-1.5 rounded-md border border-line bg-surface p-2.5 text-xs"
       data-testid="cost-card"
     >
       <div className="flex flex-wrap items-center gap-2">
         <span className="font-semibold">{toolLabel(step.tool)}</span>
-        <span className="tabular rounded-full bg-credit px-2 py-0.5 text-[11px] font-semibold text-surface">{formatCost(step.cost)}</span>
+        <span className="tabular rounded-full bg-credit-soft px-2 py-0.5 text-[11px] font-semibold text-credit">{formatCost(step.cost)}</span>
         {step.parse === "repaired" && (
           <span className="rounded border border-line px-1.5 text-[11px] text-muted" title="The model's arguments failed validation once and were corrected">
             args auto-corrected
           </span>
         )}
       </div>
-      <p className="break-words text-xs text-muted">{argsSummary(step.args)}</p>
-      <p className="tabular text-xs">
+      <p className="break-words text-muted">{argsSummary(step.args)}</p>
+      <p className="tabular text-muted">
         {after !== null ? (
           <>
             {mode === "replay" ? "Demo balance" : "Balance"} after: <strong>{after}</strong> credits
@@ -50,7 +50,6 @@ export function CostCard({ step, onRun, onSkip }: Props) {
           </>
         )}
       </p>
-      <p className="text-[11px] text-muted">vidIQ charges every call, retries included. This copilot never retries a paid call on its own.</p>
       <div className="flex gap-2">
         <button
           type="button"
