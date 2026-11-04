@@ -12,3 +12,7 @@ next-env.d.ts
 
 # Local planning notes and agent reports
 plans/
+
+# OpenNext / Wrangler build output
+.open-next/
+.wrangler/

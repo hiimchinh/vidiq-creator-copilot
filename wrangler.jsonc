@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Public Replay-only demo. Build: corepack pnpm cf:build (bakes LIVE_MODE=off into the static page).
+  "name": "vidiq-demo",
+  "account_id": "ee3b19c037e61cd688ecc8e9ba1c793e",
+  "main": "cloudflare/worker.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  // Runtime check in every /api/* route. No OPENROUTER_API_KEY is ever set on this Worker.
+  "vars": { "LIVE_MODE": "off" },
+  // Matches API_RATE_LIMIT in src/lib/rate-limit/api-rate-limit.ts: 30 requests per 60 s per client IP.
+  "ratelimits": [{ "name": "API_RATE_LIMITER", "namespace_id": "2611", "simple": { "limit": 30, "period": 60 } }],
+  "observability": { "enabled": true }
+}

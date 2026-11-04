@@ -21,7 +21,9 @@
     "demo": "next build && next start -p 3000",
     "check": "tsc --noEmit && vitest run",
     "eval:claims": "tsx scripts/eval-claims.ts",
-    "rerecord:answers": "tsx scripts/rerecord-answers.ts"
+    "rerecord:answers": "tsx scripts/rerecord-answers.ts",
+    "cf:build": "LIVE_MODE=off opennextjs-cloudflare build",
+    "cf:deploy": "opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "next": "16.4.5",
@@ -31,6 +33,7 @@
     "zustand": "5.0.16"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "1.20.15",
     "@playwright/test": "1.63.0",
     "@tailwindcss/postcss": "4.3.4",
     "@types/node": "22.20.5",
@@ -39,6 +42,7 @@
     "tailwindcss": "4.3.4",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
-    "vitest": "5.1.0"
+    "vitest": "5.1.0",
+    "wrangler": "4.156.2"
   }
 }
