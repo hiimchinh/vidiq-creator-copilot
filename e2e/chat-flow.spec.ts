@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test.describe("chat flow in Replay mode", () => {
   test("asks before paying, streams the answer, then serves the repeat from cache", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByRole("radio", { name: "Replay" })).toHaveAttribute("aria-checked", "true");
+    await expect(page.getByTestId("composer").getByRole("button", { name: /Data mode/ })).toHaveText("Replay");
 
     await page.getByRole("button", { name: "Keyword research: home espresso" }).click();
 
@@ -22,13 +22,13 @@ test.describe("chat flow in Replay mode", () => {
     await expect(answer).toContainText("home barista", { timeout: 10_000 });
     await expect(answer).toHaveAttribute("aria-busy", "false");
     await expect(page.getByText(/First token in \d+ ms/)).toBeVisible();
-    await expect(page.getByTestId("credit-meter")).toContainText("5 cr");
+    await expect(page.getByTestId("credit-meter").filter({ visible: true })).toContainText("5 cr");
 
     // Same question again: no cost card, 0 credits, meter unchanged.
     await page.getByRole("button", { name: "Keyword research: home espresso" }).click();
     await expect(page.getByTestId("cached-badge")).toHaveText("0 credits, cached");
     await expect(page.getByTestId("cost-card")).toHaveCount(0);
-    await expect(page.getByTestId("credit-meter")).toContainText("5 cr");
+    await expect(page.getByTestId("credit-meter").filter({ visible: true })).toContainText("5 cr");
   });
 
   test("lets the creator skip one paid call of a multi-call plan", async ({ page }) => {
@@ -44,7 +44,7 @@ test.describe("chat flow in Replay mode", () => {
 
     await expect(page.getByText("Skipped · 0 credits")).toBeVisible();
     await expect(page.getByTestId("answer").last()).toContainText("You skipped 1 paid call");
-    await expect(page.getByTestId("credit-meter")).toContainText("5 cr");
+    await expect(page.getByTestId("credit-meter").filter({ visible: true })).toContainText("5 cr");
   });
 
   test("renders outliers as a thumbnail grid", async ({ page }) => {
@@ -67,7 +67,8 @@ test.describe("chat flow in Replay mode", () => {
   test("Live mode needs the visitor's own key before it can ask", async ({ page }) => {
     test.skip(process.env.LIVE_MODE === "off", "Live mode is disabled on the public demo build");
     await page.goto("/");
-    await page.getByRole("radio", { name: "Live" }).click();
+    await page.getByTestId("composer").getByRole("button", { name: /Data mode/ }).click();
+    await page.getByRole("menuitemradio", { name: /Live/ }).click();
     await expect(page.getByText("Add your vidIQ API key above to use Live mode.")).toBeVisible();
     await expect(page.getByRole("button", { name: "Ask", exact: true })).toBeDisabled();
     await expect(page.getByLabel("Your vidIQ API key")).toHaveAttribute("type", "password");

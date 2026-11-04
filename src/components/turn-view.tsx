@@ -9,7 +9,7 @@ import { ClaimCheckPanel } from "./claim-check-panel";
 import { StepCard } from "./step-card";
 import { WorkedFor } from "./worked-for";
 
-/** One question and its answer, laid out like a coach chat: prompt bubble, "Worked for", prose, check note. */
+/** One question and its answer, laid out like a coach chat: prompt bubble, "Worked for", prose with the check under its scores. */
 export function TurnView({ turn }: { turn: Turn }) {
   const streaming = turn.status === "answering";
   const done = turn.status === "done";
@@ -42,8 +42,12 @@ export function TurnView({ turn }: { turn: Turn }) {
       )}
       {(turn.answer || streaming) && (
         <div className="flex flex-col gap-4">
-          <AnswerText text={turn.answer} streaming={streaming} sources={sources} />
-          {done && <ClaimCheckPanel text={turn.answer} sources={sources} />}
+          <AnswerText
+            text={turn.answer}
+            streaming={streaming}
+            sources={sources}
+            afterTable={done ? <ClaimCheckPanel text={turn.answer} sources={sources} /> : undefined}
+          />
           {turn.ttftMs !== null && done && <p className="tabular text-xs text-muted">First token in {turn.ttftMs} ms</p>}
         </div>
       )}

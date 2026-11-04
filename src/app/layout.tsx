@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { Figtree } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
+
+/** A free geometric sans close to the coach UI; self-hosted by next/font with a metric-matched fallback (no layout shift). */
+const figtree = Figtree({ subsets: ["latin"], display: "swap", variable: "--font-figtree" });
 
 export const metadata: Metadata = {
   title: "Creator Copilot — independent demo on the vidIQ MCP",
@@ -19,7 +23,7 @@ const THEME_SCRIPT = `try{if(localStorage.getItem("theme")==="light")document.do
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className={`dark ${figtree.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
