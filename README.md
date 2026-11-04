@@ -182,3 +182,7 @@ scripts/            claim-eval/, eval-claims, rerecord-answers, record-fixtures,
 eval/claims/        claim-checker fixtures
 docs/findings/      cropped AI Coach screenshots for FINDINGS.md
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
