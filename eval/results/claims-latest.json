@@ -414,5 +414,67 @@
       "claims": [],
       "extraFlags": []
     }
+  ],
+  "replay": [
+    {
+      "id": "keyword-home-espresso",
+      "verified": 8,
+      "flagged": [
+        {
+          "display": "high competition",
+          "check": "no-source",
+          "reason": "No cited number backs \"high competition\"."
+        }
+      ],
+      "text": "\"home barista\" is your best target for a small channel because it offers a strong overall score of 62 with the lowest competition of 26 among your top options.\n\n- Create content focused on the \"home barista\" lifestyle to capture the 4341 monthly searches while avoiding the high competition of broader terms like \"espresso\".\n- Target \"eureka mignon xl\" if you want to review gear, as it has a high overall score of 66 and low competition of 24.\n- Produce \"how to make espresso\" tutorials to leverage the 3372 monthly searches and a manageable competition level of 30."
+    },
+    {
+      "id": "title-espresso",
+      "verified": 4,
+      "flagged": [],
+      "text": "Your current title is excellent, earning a score of 99, so keep it as your primary option for high click-through potential.\n\n- Use \"Testing 5 Cheap Espresso Machines To Find The Best One\" if you want to emphasize the search-intent aspect, which scores 97.\n- Try \"5 Cheap Espresso Machines Tested: Which Is Actually Good?\" to create a stronger curiosity gap, as it scores 96.\n- Consider \"I Tested The Cheapest Espresso Machines On Amazon\" to leverage platform-specific authority, which scores 96.\n- Ensure your thumbnail highlights the specific machines being tested to visually reinforce the \"5\" mentioned in your high-performing title."
+    },
+    {
+      "id": "outliers-budget-travel",
+      "verified": 4,
+      "flagged": [],
+      "text": "The most significant outlier is \"5 Budget-Friendly Cheap Countries to Visit Before They Get Expensive,\" which achieved a breakout score of 245 despite a relatively low views-per-hour rate. This suggests high searchability and long-term interest in \"listicle\" style budget content.\n\n- Focus on \"listicle\" formats featuring multiple destinations, as \"15 Dream Destinations to Visit in 2027 Without Breaking the Bank\" also saw strong performance with a breakout score of 29.\n- Leverage specific regional \"cheap\" angles, similar to the success of \"20 INSANELY CHEAP Travel Destinations in Florida\" which reached a breakout score of 37.\n- Prioritize high-utility, \"how-to\" flight and booking advice, as seen in the high views-per-hour of 52.8 for \"The EXACT Way To Book Flights.\""
+    },
+    {
+      "id": "questions-sourdough-starter",
+      "verified": 5,
+      "flagged": [],
+      "text": "The most effective way to capture search traffic is to address the specific maintenance needs of experienced bakers, as \"how to feed sourdough starter from refrigerator\" has an overall score of 65 and lower competition of 20.\n\n- Create a dedicated tutorial on reviving cold starters to capitalize on the 4.6K monthly searches.\n- Target beginners by addressing flour types, as \"can you make sourdough starter with regular flour?\" has an overall score of 64.\n- Produce a troubleshooting guide for \"how to make my sourdough starter active,\" which maintains an overall score of 61."
+    },
+    {
+      "id": "longtail-budget-travel",
+      "verified": 8,
+      "flagged": [
+        {
+          "display": "high search volume",
+          "check": "mismatch",
+          "reason": "8.3K is medium search volume by the threshold table."
+        }
+      ],
+      "text": "The most promising opportunity is \"budget travel city guides,\" which balances a high search volume of 8.3K with a very accessible competition score of 15.\n\n- Create a series focused on \"budget travel & backpacking,\" as it maintains a strong search volume of 6.1K with low competition of 16.\n- Target specific locations like \"baguio city budget travel guide\" to capture niche interest with a competition score of 21.\n- Develop a general \"travel budget\" planning video, as it attracts 9.5K monthly searches while keeping competition at 28."
+    },
+    {
+      "id": "channel-veritasium",
+      "verified": 3,
+      "flagged": [
+        {
+          "display": "high volume",
+          "check": "no-source",
+          "reason": "No cited number backs \"high volume\"."
+        }
+      ],
+      "text": "Veritasium has maintained strong momentum, gaining 100K subscribers and over 83.3M views in the last 30 days.\n\n- Leverage the high engagement from your recent 8 uploads by analyzing which topics drove the most significant spikes in your view velocity.\n- Since your channel is currently seeing a high volume of new viewers, consider adding a pinned comment or end screen call-to-action on your top-performing recent video to convert these new visitors into long-term subscribers.\n- Review the audience retention graphs for your latest content to identify where viewers are dropping off, ensuring your high-performing videos continue to drive growth throughout the next month."
+    },
+    {
+      "id": "questions-sourdough",
+      "verified": 0,
+      "flagged": [],
+      "text": "The keyword research tool failed to return specific question data for \"sourdough for beginners.\" This often happens when the search query is too broad or the language settings need refinement.\n\n- Try searching for more specific long-tail phrases like \"how to feed sourdough starter\" or \"sourdough bread troubleshooting\" to trigger question-based results.\n- Ensure your language parameter is set to 'en' or your target audience's primary language if you are searching from a region where English is not the default.\n- Use the \"Related Keywords\" tab instead of the \"Questions\" mode to see what broader topics are currently trending in the sourdough niche."
+    }
   ]
 }

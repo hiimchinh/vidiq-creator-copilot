@@ -27,44 +27,52 @@
     }
   },
   "answer": {
-    "ttftMs": 746,
+    "ttftMs": 781,
     "chunks": [
       {
-        "t": 746,
-        "text": "\""
+        "t": 781,
+        "text": "\"home"
       },
       {
-        "t": 790,
-        "text": "Home espresso\" is too broad for a small channel; pivot to \"home barista\" or"
+        "t": 853,
+        "text": " barista\" is your best target for a small channel because it offers a strong overall"
       },
       {
-        "t": 872,
-        "text": " specific gear tutorials to capture lower-competition traffic. While \"home espresso\" has a competition score of 29, it"
+        "t": 893,
+        "text": " score of [[c1.rows.home barista.overall=62]] with the lowest competition of [[c1.rows."
       },
       {
-        "t": 983,
-        "text": " lacks the specificity needed to rank against established creators.\n\n- Target \"home barista\" (competition 26) or \"espresso"
+        "t": 1001,
+        "text": "home barista.competition=26]] among your top options.\n\n- Create content focused on the \"home barista\" lifestyle to capture the [["
       },
       {
-        "t": 1057,
-        "text": " machine tutorial\" (competition 34) to reach viewers actively seeking educational content rather than just browsing machines.\n- Create"
+        "t": 1060,
+        "text": "c1.rows.home barista.monthlySearches=4341]] monthly searches while avoiding the high competition"
       },
       {
-        "t": 1155,
-        "text": " content around the \"eureka mignon xl\" (competition 24) or \"wdt tool\" (competition 33); these niche"
+        "t": 1141,
+        "text": " of broader terms like \"espresso\".\n- Target \"eureka mignon xl\" if you want to review gear, as it has a high"
       },
       {
-        "t": 1297,
-        "text": " keywords have higher overall scores and lower competition than broad terms like \"espresso machine.\"\n- Avoid high-competition terms like \"espresso\" ("
+        "t": 1208,
+        "text": " overall score of [[c1.rows.eureka mignon xl.overall=66]] and low competition of [[c"
       },
       {
-        "t": 1354,
-        "text": "74) or \"coffee\" (71), which are dominated by massive channels and have negative search growth trends."
+        "t": 1411,
+        "text": "1.rows.eureka mignon xl.competition=24]].\n- Produce \"how to make espresso\" tutorials to leverage the [[c1"
+      },
+      {
+        "t": 1411,
+        "text": ".rows.how to make espresso.monthlySearches=3372]] monthly searches and a manageable competition level"
+      },
+      {
+        "t": 1411,
+        "text": " of [[c1.rows.how to make espresso.competition=30]]."
       }
     ]
   },
   "costs": {
     "credits": 5,
-    "llmUsd": 0.0008569999999999999
+    "llmUsd": 0.0014615
   }
 }

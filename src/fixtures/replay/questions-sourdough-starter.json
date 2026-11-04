@@ -27,48 +27,52 @@
     }
   },
   "answer": {
-    "ttftMs": 781,
+    "ttftMs": 726,
     "chunks": [
       {
-        "t": 781,
+        "t": 726,
         "text": "The most"
       },
       {
-        "t": 844,
-        "text": " valuable opportunity is \"how to feed sourdough starter from the refrigerator,\" which has a"
+        "t": 822,
+        "text": " effective way to capture search traffic is to address the specific maintenance needs of experienced bakers"
       },
       {
-        "t": 948,
-        "text": " high overall score of 65 and low competition (20), making it your best bet for ranking quickly.\n\n-"
+        "t": 919,
+        "text": ", as \"how to feed sourdough starter from refrigerator\" has an overall score of [[c1.rows.how to feed"
       },
       {
-        "t": 1023,
-        "text": " Create a \"Fridge Maintenance\" tutorial focusing on the specific steps to revive and feed a cold starter, as this addresses a high"
+        "t": 981,
+        "text": " sourdough starter from refrigerator.overall=65]] and lower competition of [[c1.rows.how to feed sourdough starter from"
       },
       {
-        "t": 1099,
-        "text": "-intent, low-competition pain point.\n- Address the \"regular flour\" query (6,092"
+        "t": 1070,
+        "text": " refrigerator.competition=20]].\n\n- Create a dedicated tutorial on reviving cold starters to capitalize on the [[c1."
       },
       {
-        "t": 1191,
-        "text": " monthly searches) in your intro to capture beginners who are intimidated by specialty flours.\n- Film a \"Troubleshooting\" video"
+        "t": 1121,
+        "text": "rows.how to feed sourdough starter from refrigerator.monthlySearches=4.6K]] monthly searches.\n-"
       },
       {
-        "t": 1269,
-        "text": " specifically on making a starter active (61 overall score), as this is a high-volume hurdle for your audience.\n- Avoid broad"
+        "t": 1217,
+        "text": " Target beginners by addressing flour types, as \"can you make sourdough starter with regular flour?\" has an overall score of [[c1"
       },
       {
-        "t": 1391,
-        "text": " \"how to make\" videos for now, as that topic is more competitive and currently seeing a 31.5% decline in search demand"
+        "t": 1270,
+        "text": ".rows.can you make sourdough starter with regular flour?.overall=64]].\n- Produce a troubleshooting guide for \"how to make"
       },
       {
-        "t": 1424,
-        "text": "."
+        "t": 1355,
+        "text": " my sourdough starter active,\" which maintains an overall score of [[c1.rows.how to make my sourdough starter active.overall"
+      },
+      {
+        "t": 1363,
+        "text": "=61]]."
       }
     ]
   },
   "costs": {
     "credits": 5,
-    "llmUsd": 0.00076975
+    "llmUsd": 0.001248
   }
 }

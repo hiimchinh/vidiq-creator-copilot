@@ -20,7 +20,8 @@
     "record": "tsx scripts/record-fixtures.ts",
     "demo": "next build && next start -p 3000",
     "check": "tsc --noEmit && vitest run",
-    "eval:claims": "tsx scripts/eval-claims.ts"
+    "eval:claims": "tsx scripts/eval-claims.ts",
+    "rerecord:answers": "tsx scripts/rerecord-answers.ts"
   },
   "dependencies": {
     "next": "16.4.5",

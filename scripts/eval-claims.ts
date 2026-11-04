@@ -6,6 +6,9 @@
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import type { ReplayScenario } from "../src/lib/replay/replay-types";
+import { REPLAY_SCENARIOS } from "../src/fixtures/replay";
+import { checkReplayAnswer } from "./claim-eval/replay-answers";
 import { type ClaimCase, scoreCase, totals } from "./claim-eval/score-claims";
 
 const root = join(import.meta.dirname, "..");
@@ -32,7 +35,19 @@ const lines = [
   "False positive: a correct claim flagged (or a non-claim flagged). False negative: a wrong or unbacked claim not flagged.",
   "",
 ];
+const replay = (REPLAY_SCENARIOS as ReplayScenario[]).map(checkReplayAnswer);
+const replayVerified = replay.reduce((n, r) => n + r.verified, 0);
+const replayFlagged = replay.flatMap((r) => r.flagged.map((f) => ({ id: r.id, ...f })));
+lines.push(
+  "## Replay answers under the citation prompt",
+  "",
+  `${replay.length} recorded answers, ${replayVerified + replayFlagged.length} figures and labels: ${replayVerified} verified, ${replayFlagged.length} flagged.`,
+  "",
+  ...replayFlagged.map((f) => `- ${f.id}: “${f.display}” (${f.check}): ${f.reason}`),
+  "",
+);
 writeFileSync(join(root, "eval/results/claims-latest.md"), lines.join("\n"));
-writeFileSync(join(root, "eval/results/claims-latest.json"), `${JSON.stringify({ naive, ours, results }, null, 2)}\n`);
+writeFileSync(join(root, "eval/results/claims-latest.json"), `${JSON.stringify({ naive, ours, results, replay }, null, 2)}\n`);
 console.log(lines.slice(4, 8).join("\n"));
+console.log(`replay answers: ${replayVerified} verified, ${replayFlagged.length} flagged`);
 for (const r of results) if (r.ours.fp || r.ours.fn || r.extraFlags.length) console.log(`  ours missed on ${r.id}:`, JSON.stringify(r.claims), r.extraFlags);

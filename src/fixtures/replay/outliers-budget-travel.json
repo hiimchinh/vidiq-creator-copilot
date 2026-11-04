@@ -34,56 +34,52 @@
     }
   },
   "answer": {
-    "ttftMs": 863,
+    "ttftMs": 868,
     "chunks": [
       {
-        "t": 863,
+        "t": 868,
         "text": "The most"
       },
       {
-        "t": 954,
-        "text": " successful \"budget travel\" content currently uses \"listicle\" titles that promise specific,"
+        "t": 914,
+        "text": " significant outlier is \"5 Budget-Friendly Cheap Countries to Visit Before They Get Expensive,\" which achieved a breakout"
       },
       {
-        "t": 1010,
-        "text": " actionable savings (e.g., \"15 Dream Destinations\" or \"20 INSANELY CHEAP\"). High"
+        "t": 1194,
+        "text": " score of [[c1.videos.7.breakout=245]] despite a relatively low views-per-hour rate"
       },
       {
-        "t": 1261,
-        "text": "-performing videos like *Retirement Unlocked* (29x breakout) and *The Florida Files* (3"
+        "t": 1194,
+        "text": ". This suggests high searchability and long-term interest in \"listicle\" style budget content.\n\n- Focus on \""
       },
       {
-        "t": 1262,
-        "text": "7x breakout) prove that long-form, deep-dive guides (25–40+ minutes) are capturing"
+        "t": 1194,
+        "text": "listicle\" formats featuring multiple destinations, as \"15 Dream Destinations to Visit in 2027 Without Breaking the Bank\" also"
       },
       {
-        "t": 1262,
-        "text": " significant attention.\n\n- **Adopt \"Listicle\" Packaging:** Use high-value numbers in your titles to promise specific,"
+        "t": 1387,
+        "text": " saw strong performance with a breakout score of [[c1.videos.4.breakout=29]].\n- Leverage"
       },
       {
-        "t": 1538,
-        "text": " low-cost outcomes.\n- **Prioritize Depth:** Create comprehensive, long-form guides (20+ minutes"
+        "t": 1387,
+        "text": " specific regional \"cheap\" angles, similar to the success of \"20 INSANELY CHEAP Travel Destinations in Florida\""
       },
       {
-        "t": 1538,
-        "text": ") that act as a \"one-stop shop\" for a specific region or strategy.\n- **Focus on \"How-"
+        "t": 1387,
+        "text": " which reached a breakout score of [[c1.videos.6.breakout=37]].\n- Prioritize high-"
       },
       {
-        "t": 1538,
-        "text": "To\" Utility:** Emphasize \"EXACT\" methods or \"Tricks\" to save money, as these provide higher"
+        "t": 1516,
+        "text": "utility, \"how-to\" flight and booking advice, as seen in the high views-per-hour of [[c1.videos."
       },
       {
-        "t": 1694,
-        "text": " perceived value than generic travel vlogs.\n- **Target \"Before They Get Expensive\":** Use urgency in your hooks"
-      },
-      {
-        "t": 1703,
-        "text": " to drive clicks."
+        "t": 1521,
+        "text": "5.vph=52.8]] for \"The EXACT Way To Book Flights.\""
       }
     ]
   },
   "costs": {
     "credits": 5,
-    "llmUsd": 0.001268
+    "llmUsd": 0.00216725
   }
 }

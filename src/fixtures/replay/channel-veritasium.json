@@ -237,40 +237,44 @@
     }
   },
   "answer": {
-    "ttftMs": 857,
+    "ttftMs": 957,
     "chunks": [
       {
-        "t": 857,
+        "t": 957,
         "text": "Veritas"
       },
       {
-        "t": 902,
-        "text": "ium has seen strong momentum, gaining 100,000 subscribers and"
+        "t": 987,
+        "text": "ium has maintained strong momentum, gaining [[c1.growth.subscribersGained="
       },
       {
-        "t": 1133,
-        "text": " 83.3 million views over the last 30 days while publishing 8 new videos.\n\n- Analyze the performance"
+        "t": 1281,
+        "text": "100K]] subscribers and over [[c1.growth.viewsGained=83.3M]] views in"
       },
       {
-        "t": 1134,
-        "text": " of the 8 videos published this period; identify which topics drove the highest view velocity to inform your next content calendar.\n- With"
+        "t": 1282,
+        "text": " the last 30 days.\n\n- Leverage the high engagement from your recent [[c1.growth.videosPublished=8]] uploads"
       },
       {
-        "t": 1134,
-        "text": " 83.3M views generated from only 8 uploads, focus on high-production-value, evergreen storytelling that"
+        "t": 1282,
+        "text": " by analyzing which topics drove the most significant spikes in your view velocity.\n- Since your channel is currently seeing a high volume of new"
       },
       {
-        "t": 1365,
-        "text": " encourages long-term search and browse traffic.\n- Since subscriber growth is steady but slower than view velocity, experiment with pinned"
+        "t": 1545,
+        "text": " viewers, consider adding a pinned comment or end screen call-to-action on your top-performing recent video to convert"
       },
       {
-        "t": 1370,
-        "text": " comments or end-screen CTAs that specifically target non-subscribed viewers who are already engaging with your content."
+        "t": 1547,
+        "text": " these new visitors into long-term subscribers.\n- Review the audience retention graphs for your latest content to identify where viewers are dropping off, ensuring"
+      },
+      {
+        "t": 1547,
+        "text": " your high-performing videos continue to drive growth throughout the next month."
       }
     ]
   },
   "costs": {
     "credits": 5,
-    "llmUsd": 0.00099825
+    "llmUsd": 0.0013635000000000001
   }
 }

@@ -27,44 +27,40 @@
     }
   },
   "answer": {
-    "ttftMs": 856,
+    "ttftMs": 756,
     "chunks": [
       {
-        "t": 856,
-        "text": "The keyword"
+        "t": 756,
+        "text": "The"
+      },
+      {
+        "t": 846,
+        "text": " keyword research tool failed to return specific question data for \"sourdough for beginners.\" This"
       },
       {
         "t": 885,
-        "text": " research tool failed to return data for \"sourdough for beginners.\" This is likely because"
+        "text": " often happens when the search query is too broad or the language settings need refinement.\n\n- Try searching for more specific long"
       },
       {
-        "t": 1096,
-        "text": " the search volume for that specific phrase as a question is too low, or the language settings need adjustment.\n\n- Try searching"
+        "t": 983,
+        "text": "-tail phrases like \"how to feed sourdough starter\" or \"sourdough bread troubleshooting\" to trigger question-based results.\n- Ensure"
       },
       {
-        "t": 1096,
-        "text": " broader terms like \"sourdough bread\" or \"sourdough starter\" and filter by the \"Questions\" tab"
+        "t": 1045,
+        "text": " your language parameter is set to 'en' or your target audience's primary language if you are searching from a region"
       },
       {
-        "t": 1096,
-        "text": " to see if related queries appear.\n- If you are targeting a specific region, pass the `language` parameter (e"
+        "t": 1123,
+        "text": " where English is not the default.\n- Use the \"Related Keywords\" tab instead of the \"Questions\" mode to see"
       },
       {
-        "t": 1375,
-        "text": ".g., `language: 'en'`) in your next request to ensure the tool pulls from the correct database.\n- Check the \""
-      },
-      {
-        "t": 1375,
-        "text": "Related Keywords\" tab instead of \"Questions\" to find high-volume topics like \"how to make sourdough starter\" or \"s"
-      },
-      {
-        "t": 1375,
-        "text": "ourdough bread recipe,\" which often represent the intent behind beginner searches."
+        "t": 1166,
+        "text": " what broader topics are currently trending in the sourdough niche."
       }
     ]
   },
   "costs": {
     "credits": 5,
-    "llmUsd": 0.0006845
+    "llmUsd": 0.0009995
   }
 }

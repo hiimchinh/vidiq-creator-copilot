@@ -28,48 +28,56 @@
     }
   },
   "answer": {
-    "ttftMs": 695,
+    "ttftMs": 741,
     "chunks": [
       {
-        "t": 695,
-        "text": "The data"
+        "t": 741,
+        "text": "The most"
       },
       {
-        "t": 731,
-        "text": " provided only returned 8 keywords rather than 40. Your best opportunity is \""
+        "t": 764,
+        "text": " promising opportunity is \"budget travel city guides,\" which balances a high search volume of"
       },
       {
-        "t": 806,
-        "text": "budget travel city guides,\" which offers the highest overall score (69) and the lowest competition (15) among the results"
+        "t": 925,
+        "text": " [[c1.rows.budget travel city guides.monthlySearches=8.3K]] with a very accessible"
       },
       {
-        "t": 899,
-        "text": ".\n\n- Prioritize \"budget travel city guides\" and \"budget travel & backpacking\" to capture high-intent viewers"
+        "t": 926,
+        "text": " competition score of [[c1.rows.budget travel city guides.competition=15]].\n\n- Create a series"
       },
       {
-        "t": 950,
-        "text": " with minimal competition.\n- Create a specific \"hidden travel fees\" video; despite the 12,071 monthly"
+        "t": 926,
+        "text": " focused on \"budget travel & backpacking,\" as it maintains a strong search volume of [[c1.rows.budget travel"
       },
       {
-        "t": 1028,
-        "text": " searches, it has a low competition score of 32, making it a strong niche play.\n- Avoid \"budget travel tips"
+        "t": 1143,
+        "text": " & backpacking.monthlySearches=6.1K]] with low competition of [[c1.rows.budget travel & backpacking"
       },
       {
-        "t": 1068,
-        "text": "\" for now; its search demand has dropped by 38.2%, suggesting waning interest.\n- To get"
+        "t": 1143,
+        "text": ".competition=16]].\n- Target specific locations like \"baguio city budget travel guide\" to capture niche"
       },
       {
-        "t": 1216,
-        "text": " the remaining 32 long-tail variations, try re-running the tool with more specific geographic or demographic modifiers (e.g., \""
+        "t": 1143,
+        "text": " interest with a competition score of [[c1.rows.baguio city budget travel guide.competition=21]].\n- Develop a"
       },
       {
-        "t": 1249,
-        "text": "budget travel Europe,\" \"budget travel solo\")."
+        "t": 1338,
+        "text": " general \"travel budget\" planning video, as it attracts [[c1.rows.travel budget.monthlySearches="
+      },
+      {
+        "t": 1338,
+        "text": "9.5K]] monthly searches while keeping competition at [[c1.rows.travel budget.competition=28"
+      },
+      {
+        "t": 1338,
+        "text": "]]."
       }
     ]
   },
   "costs": {
     "credits": 5,
-    "llmUsd": 0.00079325
+    "llmUsd": 0.0013115000000000002
   }
 }
