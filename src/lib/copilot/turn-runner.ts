@@ -2,7 +2,6 @@ import { type Step, type Turn, useCopilotStore } from "@/store/copilot-store";
 import { useKeyStore } from "@/store/key-store";
 import { costOf } from "../credits/cost-of";
 import { decideRun } from "../credits/run-policy";
-import { toResultView } from "../schemas/result-view";
 import { track } from "../telemetry/track";
 import { postPlan, postTool, streamAnswer } from "./api-client";
 import { getCached, putCached } from "./session-cache";
@@ -52,8 +51,8 @@ async function advance(turnId: string): Promise<void> {
         status: "done",
         cached: true,
         charged: 0,
-        view: toResultView(next.tool, cached, next.args),
-        resultText: cached.ok ? cached.text : undefined,
+        view: cached.view,
+        resultText: cached.result.ok ? cached.result.text : undefined,
       });
       track("tool_call", { tool: next.tool, credits: 0, cached: true, outcome: "ok", mode: turn.mode });
       continue;
@@ -73,13 +72,12 @@ async function runStep(turnId: string, step: Step): Promise<void> {
   updateStep(turnId, step.id, { status: "running" });
   const started = performance.now();
   try {
-    const { result } = await postTool(turn.mode, step.tool, step.args, useKeyStore.getState().vidiqKey);
-    const view = toResultView(step.tool, result, step.args);
+    const { result, view } = await postTool(turn.mode, step.tool, step.args, useKeyStore.getState().vidiqKey);
     const estimate = step.cost.kind === "fixed" ? step.cost.credits : 0;
     // vidIQ refunds failed calls automatically, and reports the real charge in `_credits.used` when it can.
     const reported = "creditsUsed" in view && typeof view.creditsUsed === "number" ? view.creditsUsed : undefined;
     const charged = result.ok ? (reported ?? estimate) : 0;
-    if (result.ok) putCached(turn.mode, step.tool, step.args, result);
+    if (result.ok) putCached(turn.mode, step.tool, step.args, { result, view });
     addSpent(charged);
     updateStep(turnId, step.id, { status: result.ok ? "done" : "error", charged, view, resultText: result.ok ? result.text : undefined });
     if (view.kind === "fallback") track("schema_fallback", { tool: step.tool });

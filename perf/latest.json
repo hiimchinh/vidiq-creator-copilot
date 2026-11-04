@@ -1,0 +1,29 @@
+{
+  "url": "http://localhost:3077/",
+  "measuredAt": "2026-11-04T03:23:30.339Z",
+  "runs": 3,
+  "budget": {
+    "lcpMs": {
+      "desktop": 1000,
+      "mobileSlow4g": 2500
+    },
+    "initialJsKbCompressed": 170,
+    "cls": 0.1
+  },
+  "results": {
+    "desktop": {
+      "lcpMs": 92,
+      "cls": 0,
+      "jsKb": 147.8,
+      "jsFiles": 6
+    },
+    "mobileSlow4g": {
+      "lcpMs": 480,
+      "cls": 0,
+      "jsKb": 147.8,
+      "jsFiles": 6
+    }
+  },
+  "pass": true,
+  "failures": []
+}

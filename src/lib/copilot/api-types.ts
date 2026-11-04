@@ -1,13 +1,12 @@
 import { z } from "zod";
 import type { McpCallResult } from "../mcp/mcp-client";
 import type { PlannedCall, RejectedCall } from "../llm/planner";
+import type { ResultView } from "../schemas/view-types";
 
 export const ModeSchema = z.enum(["replay", "live"]);
 export type Mode = z.infer<typeof ModeSchema>;
 
-/** The visitor's vidIQ key travels only in this header, only to our own routes. */
-export const VIDIQ_KEY_HEADER = "x-vidiq-key";
-export const VIDIQ_MCP_URL = "https://mcp.vidiq.com/mcp";
+export { VIDIQ_KEY_HEADER, VIDIQ_MCP_URL } from "./api-constants";
 
 export const PlanRequestSchema = z.object({ mode: ModeSchema, prompt: z.string().trim().min(2).max(600) });
 export interface PlanResponse {
@@ -22,8 +21,10 @@ export const ToolRequestSchema = z.object({
   tool: z.string().min(1).max(80),
   args: z.record(z.string(), z.unknown()),
 });
+/** The server validates vidIQ output and sends a typed view, so zod never ships to the browser. */
 export interface ToolResponse {
   result: McpCallResult;
+  view: ResultView;
 }
 
 export const EvidenceSchema = z.object({

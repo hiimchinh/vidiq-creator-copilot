@@ -1,0 +1,190 @@
+{
+  "summary": {
+    "mode": "live",
+    "model": "google/gemini-3.1-flash-lite",
+    "ranAt": "2026-11-04T03:21:45.133Z",
+    "prompts": 14,
+    "evaluated": 14,
+    "toolChoiceAccuracy": "100%",
+    "schemaValidFirstPass": "100%",
+    "schemaValidAfterRepair": "100%",
+    "blockedByAllowlist": 0,
+    "ttftMsMedian": 793,
+    "ttftMsP90": 875,
+    "vidiqCreditsSpent": 0,
+    "callsServedFromRecording": 7,
+    "creditsPlannedCallsWouldCostLive": 30,
+    "llmUsd": 0.00884,
+    "malformedSuite": {
+      "cases": 10,
+      "ok": 3,
+      "repaired": 4,
+      "fallback": 3,
+      "crashed": 0
+    }
+  },
+  "rows": [
+    {
+      "prompt": "Keyword research for 'home espresso'. What should a small channel target?",
+      "expect": [
+        "vidiq_keyword_research"
+      ],
+      "got": [
+        "vidiq_keyword_research"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 793
+    },
+    {
+      "prompt": "Score this title and suggest stronger variations: 'I Tried 5 Cheap Espresso Machines So You Don't Have To'",
+      "expect": [
+        "vidiq_score_title",
+        "vidiq_generate_titles"
+      ],
+      "got": [
+        "vidiq_generate_titles",
+        "vidiq_score_title"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 787
+    },
+    {
+      "prompt": "Find outlier videos in budget travel from the last three months.",
+      "expect": [
+        "vidiq_outliers"
+      ],
+      "got": [
+        "vidiq_outliers"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 834
+    },
+    {
+      "prompt": "What questions do people ask about sourdough starter?",
+      "expect": [
+        "vidiq_keyword_research"
+      ],
+      "got": [
+        "vidiq_keyword_research"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 720
+    },
+    {
+      "prompt": "Give me 40 long-tail keyword variations for 'budget travel' so I can pick low-competition ones.",
+      "expect": [
+        "vidiq_keyword_research"
+      ],
+      "got": [
+        "vidiq_keyword_research"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 821
+    },
+    {
+      "prompt": "How much has @veritasium grown in the last 30 days?",
+      "expect": [
+        "vidiq_channel_stats"
+      ],
+      "got": [
+        "vidiq_channel_stats"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 875
+    },
+    {
+      "prompt": "Is 'home barista' a good keyword to target? Show volume and competition.",
+      "expect": [
+        "vidiq_keyword_research"
+      ],
+      "got": [
+        "vidiq_keyword_research"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": null
+    },
+    {
+      "prompt": "Rate my title: \"I Lived on $1 a Day in Tokyo\" for a long video",
+      "expect": [
+        "vidiq_score_title"
+      ],
+      "got": [
+        "vidiq_score_title"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": null
+    },
+    {
+      "prompt": "Which videos are blowing up right now about minimalist cooking?",
+      "expect": [
+        "vidiq_outliers"
+      ],
+      "got": [
+        "vidiq_outliers"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": null
+    },
+    {
+      "prompt": "Give me 5 better titles for my video 'My First Marathon Training Week'",
+      "expect": [
+        "vidiq_generate_titles"
+      ],
+      "got": [
+        "vidiq_generate_titles"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": null
+    },
+    {
+      "prompt": "How many subscribers does @mkbhd have and how fast is it growing?",
+      "expect": [
+        "vidiq_channel_stats"
+      ],
+      "got": [
+        "vidiq_channel_stats"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": null
+    },
+    {
+      "prompt": "What are the most common questions about 'air fryer recipes'?",
+      "expect": [
+        "vidiq_keyword_research"
+      ],
+      "got": [
+        "vidiq_keyword_research"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": null
+    },
+    {
+      "prompt": "Hi! What can you do?",
+      "expect": [],
+      "got": [],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": null
+    },
+    {
+      "prompt": "Generate a thumbnail for my espresso video with a shocked face.",
+      "expect": [],
+      "got": [],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": null
+    }
+  ]
+}

@@ -1,12 +1,6 @@
 import { readLines } from "../stream/read-lines";
-import {
-  type AnswerEvent,
-  type BalanceResponse,
-  type Mode,
-  type PlanResponse,
-  type ToolResponse,
-  VIDIQ_KEY_HEADER,
-} from "./api-types";
+import { VIDIQ_KEY_HEADER } from "./api-constants";
+import type { AnswerEvent, BalanceResponse, Mode, PlanResponse, ToolResponse } from "./api-types";
 
 async function postJson<T>(url: string, body: unknown, key?: string): Promise<T> {
   const headers: Record<string, string> = { "Content-Type": "application/json" };

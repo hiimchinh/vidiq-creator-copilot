@@ -1,0 +1,12 @@
+[
+  { "label": "valid", "text": "{\"title\":\"My Title\",\"type\":\"long\"}" },
+  { "label": "markdown fence", "text": "```json\n{\"title\":\"My Title\",\"type\":\"long\"}\n```" },
+  { "label": "prose around JSON", "text": "Sure! Here are the arguments: {\"title\":\"My Title\",\"type\":\"long\"} Let me know." },
+  { "label": "trailing comma", "text": "{\"title\":\"My Title\",\"type\":\"long\",}" },
+  { "label": "smart quotes", "text": "{“title”:“My Title”,“type”:“long”}" },
+  { "label": "wrong enum", "text": "{\"title\":\"My Title\",\"type\":\"video\"}", "repairTo": "{\"title\":\"My Title\",\"type\":\"long\"}" },
+  { "label": "missing field", "text": "{\"title\":\"My Title\"}", "repairTo": "{\"title\":\"My Title\",\"type\":\"long\"}" },
+  { "label": "truncated", "text": "{\"title\":\"My Ti", "repairTo": "still broken" },
+  { "label": "plain refusal", "text": "I can't help with that.", "repairTo": "I can't help with that." },
+  { "label": "empty", "text": "" }
+]

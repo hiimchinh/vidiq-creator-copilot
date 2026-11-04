@@ -1,0 +1,134 @@
+{
+  "summary": {
+    "mode": "replay",
+    "model": "recorded",
+    "ranAt": "2026-11-04T03:21:00.043Z",
+    "prompts": 14,
+    "evaluated": 6,
+    "toolChoiceAccuracy": "100%",
+    "schemaValidFirstPass": "100%",
+    "schemaValidAfterRepair": "100%",
+    "blockedByAllowlist": 0,
+    "ttftMsMedian": 781,
+    "ttftMsP90": 863,
+    "vidiqCreditsSpent": 0,
+    "creditsServedFromRecording": 7,
+    "creditsPlannedCallsWouldCostLive": 0,
+    "llmUsd": 0,
+    "malformedSuite": {
+      "cases": 10,
+      "ok": 3,
+      "repaired": 4,
+      "fallback": 3,
+      "crashed": 0
+    }
+  },
+  "rows": [
+    {
+      "prompt": "Keyword research for 'home espresso'. What should a small channel target?",
+      "expect": [
+        "vidiq_keyword_research"
+      ],
+      "got": [
+        "vidiq_keyword_research"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 746
+    },
+    {
+      "prompt": "Score this title and suggest stronger variations: 'I Tried 5 Cheap Espresso Machines So You Don't Have To'",
+      "expect": [
+        "vidiq_score_title",
+        "vidiq_generate_titles"
+      ],
+      "got": [
+        "vidiq_generate_titles",
+        "vidiq_score_title"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 785
+    },
+    {
+      "prompt": "Find outlier videos in budget travel from the last three months.",
+      "expect": [
+        "vidiq_outliers"
+      ],
+      "got": [
+        "vidiq_outliers"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 863
+    },
+    {
+      "prompt": "What questions do people ask about sourdough starter?",
+      "expect": [
+        "vidiq_keyword_research"
+      ],
+      "got": [
+        "vidiq_keyword_research"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 781
+    },
+    {
+      "prompt": "Give me 40 long-tail keyword variations for 'budget travel' so I can pick low-competition ones.",
+      "expect": [
+        "vidiq_keyword_research"
+      ],
+      "got": [
+        "vidiq_keyword_research"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 695
+    },
+    {
+      "prompt": "How much has @veritasium grown in the last 30 days?",
+      "expect": [
+        "vidiq_channel_stats"
+      ],
+      "got": [
+        "vidiq_channel_stats"
+      ],
+      "correct": true,
+      "rejected": [],
+      "ttftMs": 857
+    },
+    {
+      "prompt": "Is 'home barista' a good keyword to target? Show volume and competition.",
+      "skipped": "not recorded (run with --live)"
+    },
+    {
+      "prompt": "Rate my title: \"I Lived on $1 a Day in Tokyo\" for a long video",
+      "skipped": "not recorded (run with --live)"
+    },
+    {
+      "prompt": "Which videos are blowing up right now about minimalist cooking?",
+      "skipped": "not recorded (run with --live)"
+    },
+    {
+      "prompt": "Give me 5 better titles for my video 'My First Marathon Training Week'",
+      "skipped": "not recorded (run with --live)"
+    },
+    {
+      "prompt": "How many subscribers does @mkbhd have and how fast is it growing?",
+      "skipped": "not recorded (run with --live)"
+    },
+    {
+      "prompt": "What are the most common questions about 'air fryer recipes'?",
+      "skipped": "not recorded (run with --live)"
+    },
+    {
+      "prompt": "Hi! What can you do?",
+      "skipped": "not recorded (run with --live)"
+    },
+    {
+      "prompt": "Generate a thumbnail for my espresso video with a shocked face.",
+      "skipped": "not recorded (run with --live)"
+    }
+  ]
+}

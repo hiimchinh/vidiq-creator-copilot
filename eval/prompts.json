@@ -1,0 +1,16 @@
+[
+  { "prompt": "Keyword research for 'home espresso'. What should a small channel target?", "expect": ["vidiq_keyword_research"] },
+  { "prompt": "Score this title and suggest stronger variations: 'I Tried 5 Cheap Espresso Machines So You Don't Have To'", "expect": ["vidiq_score_title", "vidiq_generate_titles"] },
+  { "prompt": "Find outlier videos in budget travel from the last three months.", "expect": ["vidiq_outliers"] },
+  { "prompt": "What questions do people ask about sourdough starter?", "expect": ["vidiq_keyword_research"] },
+  { "prompt": "Give me 40 long-tail keyword variations for 'budget travel' so I can pick low-competition ones.", "expect": ["vidiq_keyword_research"] },
+  { "prompt": "How much has @veritasium grown in the last 30 days?", "expect": ["vidiq_channel_stats"] },
+  { "prompt": "Is 'home barista' a good keyword to target? Show volume and competition.", "expect": ["vidiq_keyword_research"] },
+  { "prompt": "Rate my title: \"I Lived on $1 a Day in Tokyo\" for a long video", "expect": ["vidiq_score_title"] },
+  { "prompt": "Which videos are blowing up right now about minimalist cooking?", "expect": ["vidiq_outliers"] },
+  { "prompt": "Give me 5 better titles for my video 'My First Marathon Training Week'", "expect": ["vidiq_generate_titles"] },
+  { "prompt": "How many subscribers does @mkbhd have and how fast is it growing?", "expect": ["vidiq_channel_stats"] },
+  { "prompt": "What are the most common questions about 'air fryer recipes'?", "expect": ["vidiq_keyword_research"] },
+  { "prompt": "Hi! What can you do?", "expect": [] },
+  { "prompt": "Generate a thumbnail for my espresso video with a shocked face.", "expect": [] }
+]
