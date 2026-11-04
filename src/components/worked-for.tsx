@@ -2,7 +2,7 @@
 export function WorkedFor({ ms, open, onToggle, controls }: { ms: number; open: boolean; onToggle: () => void; controls: string }) {
   const seconds = Math.max(1, Math.round(ms / 1000));
   return (
-    <div className="border-b border-line pb-2">
+    <div className="border-b border-surface-2 pb-1">
       <button
         type="button"
         aria-expanded={open}

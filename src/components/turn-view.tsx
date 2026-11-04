@@ -19,9 +19,10 @@ export function TurnView({ turn }: { turn: Turn }) {
   const showWorked = done && turn.workedMs !== null && turn.steps.length > 0;
   return (
     <article className="flex flex-col gap-4" data-testid="turn">
-      <div className="max-w-[85%] self-end rounded-2xl bg-surface-2 px-4 py-3 text-[15px] leading-7 text-ink" data-testid="prompt">
+      <div className="mb-8 max-w-[min(614px,88%)] self-end rounded-xl bg-surface-2 px-4 py-3 text-[15px] leading-[26px] text-ink sm:mb-14" data-testid="prompt">
         {turn.prompt}
       </div>
+      <div className="flex flex-col gap-4 sm:px-4">
       {turn.status === "planning" && (
         <p className="text-sm text-muted" role="status">Planning which vidIQ tools to use…</p>
       )}
@@ -43,13 +44,14 @@ export function TurnView({ turn }: { turn: Turn }) {
         <div className="flex flex-col gap-4">
           <AnswerText text={turn.answer} streaming={streaming} sources={sources} />
           {done && <ClaimCheckPanel text={turn.answer} sources={sources} />}
-          {turn.ttftMs !== null && done && <p className="tabular text-[11px] text-muted">First token in {turn.ttftMs} ms</p>}
+          {turn.ttftMs !== null && done && <p className="tabular text-xs text-muted">First token in {turn.ttftMs} ms</p>}
         </div>
       )}
       {done && turn.steps.length === 0 && turn.note && !turn.answer && (
         <p className="rounded-lg border border-line bg-surface p-3" data-testid="note">{turn.note}</p>
       )}
       {turn.error && <p className="text-sm text-bad" role="alert">{turn.error}</p>}
+      </div>
     </article>
   );
 }

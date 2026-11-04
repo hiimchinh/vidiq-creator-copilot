@@ -17,7 +17,7 @@ function Inline({ parts }: { parts: InlinePart[] }): ReactNode {
 function Block({ block }: { block: AnswerBlock }) {
   switch (block.kind) {
     case "heading":
-      return <h3 className="mt-3 text-lg font-semibold leading-snug"><Inline parts={block.parts} /></h3>;
+      return <h3 className="mt-2 text-lg font-semibold leading-snug"><Inline parts={block.parts} /></h3>;
     case "paragraph":
       return <p><Inline parts={block.parts} /></p>;
     case "list":
@@ -29,18 +29,18 @@ function Block({ block }: { block: AnswerBlock }) {
     case "table":
       return (
         // No overflow clipping: titles wrap, and a chip's source tooltip must be able to leave the table.
-        <div className="max-w-xl rounded-xl border border-line bg-surface">
-          <table className="w-full text-left">
+        <div className="w-full max-w-[410px] border border-hairline bg-table">
+          <table className="w-full text-left text-sm leading-[21px]">
             {block.header.length > 0 && (
               <thead>
-                <tr>{block.header.map((cell, i) => <th key={i} scope="col" className="bg-surface-2/50 px-3 py-2.5 font-normal text-muted first:rounded-tl-xl last:rounded-tr-xl sm:px-4"><Inline parts={cell} /></th>)}</tr>
+                <tr>{block.header.map((cell, i) => <th key={i} scope="col" className="bg-table-head px-[18px] py-3 text-[13px] font-normal text-muted"><Inline parts={cell} /></th>)}</tr>
               </thead>
             )}
             <tbody>
               {block.rows.map((row, r) => (
-                <tr key={r} className="border-t border-line align-top">
+                <tr key={r} className="border-t border-hairline align-top">
                   {row.map((cell, i) => (
-                    <td key={i} className="px-3 py-3 break-words last:[&_[role=tooltip]]:left-auto last:[&_[role=tooltip]]:right-0 sm:px-4"><Inline parts={cell} /></td>
+                    <td key={i} className="px-[18px] py-2.5 break-words last:[&_[role=tooltip]]:left-auto last:[&_[role=tooltip]]:right-0"><Inline parts={cell} /></td>
                   ))}
                 </tr>
               ))}
@@ -55,7 +55,7 @@ function Block({ block }: { block: AnswerBlock }) {
 export function AnswerText({ text, streaming, sources }: { text: string; streaming: boolean; sources: Source[] }) {
   const blocks = useMemo(() => buildAnswerModel(text, sources), [text, sources]);
   return (
-    <div className={`flex flex-col gap-3 text-[15px] leading-7 ${streaming ? "caret" : ""}`} aria-live="polite" aria-busy={streaming} data-testid="answer">
+    <div className={`flex flex-col gap-4 text-[15px] leading-[26px] ${streaming ? "caret" : ""}`} aria-live="polite" aria-busy={streaming} data-testid="answer">
       {blocks.map((block, i) => <Block key={i} block={block} />)}
     </div>
   );

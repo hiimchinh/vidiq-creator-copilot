@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0e0f13",
+  themeColor: "#0a0d15",
 };
 
 /** Dark by default (set on <html>), like the coach UI it mirrors; a saved "light" choice wins before first paint. */

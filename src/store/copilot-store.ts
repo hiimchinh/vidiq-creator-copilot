@@ -48,6 +48,8 @@ interface CopilotState {
   spentCredits: number;
   balance: number | null;
   turns: Turn[];
+  /** Set by "New chat": the recorded landing turn stays hidden for the rest of the visit. */
+  featuredHidden: boolean;
   setMode: (mode: Mode) => void;
   setAutoRun: (on: boolean) => void;
   setCap: (credits: number) => void;
@@ -57,6 +59,7 @@ interface CopilotState {
   updateTurn: (id: string, patch: Partial<Turn> | ((turn: Turn) => Partial<Turn>)) => void;
   updateStep: (turnId: string, stepId: string, patch: Partial<Step>) => void;
   clearTurns: () => void;
+  newChat: () => void;
 }
 
 export const useCopilotStore = create<CopilotState>()(
@@ -68,6 +71,7 @@ export const useCopilotStore = create<CopilotState>()(
       spentCredits: 0,
       balance: REPLAY_BALANCE,
       turns: [],
+      featuredHidden: false,
       setMode: (mode) => set({ mode, balance: mode === "replay" ? REPLAY_BALANCE : null, spentCredits: 0 }),
       setAutoRun: (autoRun) => set({ autoRun }),
       setCap: (capCredits) => set({ capCredits: Math.max(0, Math.min(500, Math.round(capCredits))) }),
@@ -86,6 +90,7 @@ export const useCopilotStore = create<CopilotState>()(
           ),
         })),
       clearTurns: () => set({ turns: [] }),
+      newChat: () => set({ turns: [], featuredHidden: true }),
     }),
     {
       name: "copilot-settings",
