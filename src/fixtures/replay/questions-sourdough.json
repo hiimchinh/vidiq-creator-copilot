@@ -1,6 +1,6 @@
 {
   "id": "questions-sourdough",
-  "label": "Questions people ask: sourdough",
+  "label": "Edge case: no data for a phrase",
   "prompt": "What questions do people search about sourdough for beginners?",
   "model": "google/gemini-3.1-flash-lite",
   "recordedAt": "2026-11-04T03:06:54.771Z",

@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --surface-2: #f1f1f4;
+  --border: #e3e3e8;
+  --text: #17171c;
+  --muted: #62626e;
+  --accent: #4338ca;
+  --accent-soft: #eef0ff;
+  --credit: #a1460a;
+  --credit-soft: #fff4e6;
+  --good: #137a3a;
+  --warn: #a15c07;
+  --bad: #b42318;
+  --focus: #4338ca;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0c0c10;
+  --surface: #14141a;
+  --surface-2: #1c1c24;
+  --border: #2a2a34;
+  --text: #ececf1;
+  --muted: #a0a0ad;
+  --accent: #a5a8ff;
+  --accent-soft: #1f2040;
+  --credit: #fbbf63;
+  --credit-soft: #2b1f0f;
+  --good: #4ade80;
+  --warn: #fbbf24;
+  --bad: #f87171;
+  --focus: #a5a8ff;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-credit: var(--credit);
+  --color-credit-soft: var(--credit-soft);
+  --color-good: var(--good);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Visible, consistent keyboard focus on every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+.caret::after {
+  content: "▍";
+  margin-left: 1px;
+  animation: caret 1s steps(1) infinite;
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret::after {
+    animation: none;
+  }
+}
