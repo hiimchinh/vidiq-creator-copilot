@@ -17,7 +17,7 @@ development commands.
 | Unpredictable model output | The claim checker (`src/lib/claims/`): provenance binding, unit-aware value match, unbacked-figure and label detection, markdown sanitizer. Also `parseStructured()` (ok → local repair → one model repair → typed fallback) and the argument grounding check in `src/lib/llm/grounding.ts`. |
 | MCP | Hand-written Streamable HTTP client, protocol 2025-06-18: initialize → `Mcp-Session-Id` → `notifications/initialized` → `tools/call`, JSON or SSE responses, timeouts, error mapping. `src/lib/mcp/mcp-client.ts`. |
 | Performance | Budget in `perf/budget.json`, enforced by `pnpm perf`. The checker runs in the browser; initial JS is 155.9 KB of a 170 KB budget. |
-| Tests | 152 unit tests (Vitest), written red first at the seams: provenance binding, verifier, label thresholds, markdown sanitizer, access gate. Playwright tests cover citation hover, keyboard focus and Escape, a no-raw-markdown check, the check toggle, the chat shell on desktop and mobile, and the Replay-only build. |
+| Tests | 158 unit tests (Vitest), written red first at the seams: provenance binding, verifier, label thresholds, markdown sanitizer, access gate. Playwright tests cover citation hover, keyboard focus and Escape, a no-raw-markdown check, the check toggle, the chat shell on desktop and mobile, and the Replay-only build. |
 | Monitoring | `track()` beacons to `/api/telemetry` (tool calls, plan, answer TTFT, schema fallback, web vitals, client errors). No prompts or keys are logged. |
 
 ## Architecture
@@ -85,7 +85,7 @@ through OpenRouter for $0.0040 in total.
 ## Development
 
 ```bash
-corepack pnpm check            # typecheck + 152 unit tests
+corepack pnpm check            # typecheck + 158 unit tests
 corepack pnpm e2e              # builds, starts on :3077, runs Playwright (Chromium)
 corepack pnpm eval:claims      # offline claim-checker eval → eval/results/claims-latest.md
 corepack pnpm eval             # offline planner eval on recordings
