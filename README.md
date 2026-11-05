@@ -7,6 +7,8 @@ It is not made or endorsed by vidIQ and uses no vidIQ brand assets.
 for an access link. It answers recorded example questions from stored tool results and spends no
 credits.
 
+![The exact-text check calls the creator's own 99 unverified; the provenance check verifies all 8 scores, and each score shows the tool call it came from](docs/screenshots/claim-check-toggle.gif)
+
 ## The problem
 
 AI Coach's claim check calls the creator's own correct title score "unverified". In three of three
